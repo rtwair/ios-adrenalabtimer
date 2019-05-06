@@ -19,6 +19,7 @@ class StopwatchVC: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
         AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.landscapeRight, andRotateTo: UIInterfaceOrientation.landscapeRight)
     }
     
