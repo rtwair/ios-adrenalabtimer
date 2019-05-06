@@ -55,34 +55,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5d-N7-TOs">
-                                <rect key="frame" x="30" y="548" width="364" height="42"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5d-N7-TOs">
+                                <rect key="frame" x="180" y="511" width="54" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="savebutton:" destination="Vsp-vc-hto" eventType="touchUpInside" id="tMa-7G-Nhy"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Countdown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEg-X0-ekk">
-                                <rect key="frame" x="0.0" y="98" width="414" height="48"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Countdown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEg-X0-ekk">
+                                <rect key="frame" x="20" y="98" width="374" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3CR-uD-DCb">
-                                <rect key="frame" x="30" y="212" width="364" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3CR-uD-DCb">
+                                <rect key="frame" x="20" y="221" width="374" height="34"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cj1-zn-tDo">
-                                <rect key="frame" x="0.0" y="269" width="414" height="216"/>
+                                <rect key="frame" x="20" y="275" width="374" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="578823433.65937102">
                                     <!--2019-05-06 08:17:13 +0000-->
                                 </date>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Timer Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQG-Nl-Mrj">
-                                <rect key="frame" x="5" y="154" width="414" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Timer Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vQG-Nl-Mrj">
+                                <rect key="frame" x="20" y="166" width="374" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -90,14 +90,24 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cj1-zn-tDo" firstAttribute="top" secondItem="3CR-uD-DCb" secondAttribute="bottom" constant="23" id="45z-Fy-WWQ"/>
-                            <constraint firstItem="vQG-Nl-Mrj" firstAttribute="top" secondItem="tEg-X0-ekk" secondAttribute="bottom" constant="8" id="54C-hb-qmC"/>
-                            <constraint firstItem="cj1-zn-tDo" firstAttribute="leading" secondItem="3sd-ha-ghE" secondAttribute="leading" id="8ER-FU-8hO"/>
-                            <constraint firstItem="tEg-X0-ekk" firstAttribute="top" secondItem="iM5-Eg-uey" secondAttribute="top" constant="10" id="8S8-Fp-Q4F"/>
-                            <constraint firstItem="3CR-uD-DCb" firstAttribute="top" secondItem="vQG-Nl-Mrj" secondAttribute="bottom" constant="28" id="Ic1-1D-p5c"/>
-                            <constraint firstItem="iM5-Eg-uey" firstAttribute="trailing" secondItem="cj1-zn-tDo" secondAttribute="trailing" id="Yaz-Rg-NmD"/>
-                            <constraint firstItem="vQG-Nl-Mrj" firstAttribute="top" secondItem="tEg-X0-ekk" secondAttribute="bottom" constant="8" id="t0f-6n-3Y0"/>
-                            <constraint firstItem="T5d-N7-TOs" firstAttribute="top" secondItem="cj1-zn-tDo" secondAttribute="bottom" constant="63" id="vT2-Dr-xXL"/>
+                            <constraint firstItem="vQG-Nl-Mrj" firstAttribute="centerX" secondItem="3sd-ha-ghE" secondAttribute="centerX" id="3Ik-kL-gpX"/>
+                            <constraint firstItem="cj1-zn-tDo" firstAttribute="leading" secondItem="iM5-Eg-uey" secondAttribute="leading" constant="20" id="3ju-ji-pgG"/>
+                            <constraint firstItem="iM5-Eg-uey" firstAttribute="trailing" secondItem="vQG-Nl-Mrj" secondAttribute="trailing" constant="20" id="Gh7-6V-jod"/>
+                            <constraint firstItem="T5d-N7-TOs" firstAttribute="centerX" secondItem="3sd-ha-ghE" secondAttribute="centerX" id="HEG-Xi-8Dx"/>
+                            <constraint firstItem="vQG-Nl-Mrj" firstAttribute="top" secondItem="tEg-X0-ekk" secondAttribute="bottom" constant="20" id="Hi4-cW-hG4"/>
+                            <constraint firstItem="iM5-Eg-uey" firstAttribute="trailing" secondItem="3CR-uD-DCb" secondAttribute="trailing" constant="20" id="OPY-63-c9Z"/>
+                            <constraint firstItem="tEg-X0-ekk" firstAttribute="leading" secondItem="iM5-Eg-uey" secondAttribute="leading" constant="20" id="Rsi-16-Y8v"/>
+                            <constraint firstItem="vQG-Nl-Mrj" firstAttribute="leading" secondItem="iM5-Eg-uey" secondAttribute="leading" constant="20" id="T2B-8W-tle"/>
+                            <constraint firstItem="tEg-X0-ekk" firstAttribute="top" secondItem="iM5-Eg-uey" secondAttribute="top" constant="10" id="VNh-N1-HMx"/>
+                            <constraint firstItem="3CR-uD-DCb" firstAttribute="leading" secondItem="iM5-Eg-uey" secondAttribute="leading" constant="20" id="ZFl-X9-c0z"/>
+                            <constraint firstItem="3CR-uD-DCb" firstAttribute="top" secondItem="vQG-Nl-Mrj" secondAttribute="bottom" constant="25" id="Zyx-IW-yTw"/>
+                            <constraint firstItem="cj1-zn-tDo" firstAttribute="centerX" secondItem="3sd-ha-ghE" secondAttribute="centerX" id="duu-kr-1Id"/>
+                            <constraint firstItem="3CR-uD-DCb" firstAttribute="centerX" secondItem="3sd-ha-ghE" secondAttribute="centerX" id="gBY-9s-WBn"/>
+                            <constraint firstItem="iM5-Eg-uey" firstAttribute="trailing" secondItem="cj1-zn-tDo" secondAttribute="trailing" constant="20" id="mLo-OE-M3A"/>
+                            <constraint firstItem="iM5-Eg-uey" firstAttribute="trailing" secondItem="tEg-X0-ekk" secondAttribute="trailing" constant="20" id="pO4-n8-Fdb"/>
+                            <constraint firstItem="tEg-X0-ekk" firstAttribute="centerX" secondItem="3sd-ha-ghE" secondAttribute="centerX" id="qmj-c3-dpC"/>
+                            <constraint firstItem="cj1-zn-tDo" firstAttribute="top" secondItem="3CR-uD-DCb" secondAttribute="bottom" constant="20" id="qwr-Jt-0cq"/>
+                            <constraint firstItem="T5d-N7-TOs" firstAttribute="top" secondItem="cj1-zn-tDo" secondAttribute="bottom" constant="20" id="xjs-be-kA9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iM5-Eg-uey"/>
                     </view>
