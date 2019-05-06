@@ -13,6 +13,9 @@
 		895908DC227F211A00F72B58 /* Adrenalab_Timer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 895908DA227F211A00F72B58 /* Adrenalab_Timer.xcdatamodeld */; };
 		895908DE227F211C00F72B58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 895908DD227F211C00F72B58 /* Assets.xcassets */; };
 		895908E1227F211C00F72B58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 895908DF227F211C00F72B58 /* LaunchScreen.storyboard */; };
+		897188E8228029F70074792C /* NewStopwatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897188E7228029F70074792C /* NewStopwatchVC.swift */; };
+		897188EA22802D4E0074792C /* NewCountdownVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897188E922802D4E0074792C /* NewCountdownVC.swift */; };
+		897188EC22802D630074792C /* NewIntervalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897188EB22802D630074792C /* NewIntervalVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		895908DD227F211C00F72B58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		895908E0227F211C00F72B58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		895908E2227F211C00F72B58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		897188E7228029F70074792C /* NewStopwatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStopwatchVC.swift; sourceTree = "<group>"; };
+		897188E922802D4E0074792C /* NewCountdownVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCountdownVC.swift; sourceTree = "<group>"; };
+		897188EB22802D630074792C /* NewIntervalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIntervalVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 				895908D3227F211900F72B58 /* AppDelegate.swift */,
 				895908D5227F211900F72B58 /* ViewController.swift */,
 				895908D7227F211A00F72B58 /* Main.storyboard */,
+				897188E7228029F70074792C /* NewStopwatchVC.swift */,
+				897188E922802D4E0074792C /* NewCountdownVC.swift */,
+				897188EB22802D630074792C /* NewIntervalVC.swift */,
 				895908DD227F211C00F72B58 /* Assets.xcassets */,
 				895908DF227F211C00F72B58 /* LaunchScreen.storyboard */,
 				895908E2227F211C00F72B58 /* Info.plist */,
@@ -138,9 +147,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				897188EC22802D630074792C /* NewIntervalVC.swift in Sources */,
 				895908DC227F211A00F72B58 /* Adrenalab_Timer.xcdatamodeld in Sources */,
 				895908D6227F211900F72B58 /* ViewController.swift in Sources */,
 				895908D4227F211900F72B58 /* AppDelegate.swift in Sources */,
+				897188EA22802D4E0074792C /* NewCountdownVC.swift in Sources */,
+				897188E8228029F70074792C /* NewStopwatchVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

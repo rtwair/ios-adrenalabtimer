@@ -48,8 +48,7 @@ class ViewController: UITableViewController {
     let COUNTDOWN = 1
     let INTERVAL = 2
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(_ animated: Bool) {
         fetchUserTimers()
 
     }
