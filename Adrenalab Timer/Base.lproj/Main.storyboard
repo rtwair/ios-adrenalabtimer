@@ -42,6 +42,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="s94-d7-AeA" kind="show" identifier="toTimerVC" id="BIo-Wb-WVG"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KOt-aI-q2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -300,10 +303,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="tLA-55-va3"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kt8-VB-UV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2681" y="122"/>
+            <point key="canvasLocation" x="396" y="872"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JOQ-Nh-zut">

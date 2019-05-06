@@ -7,7 +7,6 @@
 //
 
 import UIKit
-//import timermodel.swift
 
 class NewStopwatchVC: UIViewController {
     @IBOutlet weak var TimerNameLabel: UITextField!

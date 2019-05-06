@@ -120,7 +120,7 @@ class ViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedTimer: Wodtimer = timers[indexPath.section][indexPath.row]
-        performSegue(withIdentifier: "timeMe", sender: selectedTimer)
+        performSegue(withIdentifier: "toTimerVC", sender: selectedTimer)
     }
     
    /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
