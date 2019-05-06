@@ -118,6 +118,32 @@ class ViewController: UITableViewController {
         return timers.count
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let selectedTimer: Wodtimer = timers[indexPath.section][indexPath.row]
+        performSegue(withIdentifier: "timeMe", sender: selectedTimer)
+    }
+    
+   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let createVC = segue.destination as? AddViewController {
+            createVC.toDoTableVC = self
+        }
+        if let modifyVC = segue.destination as? ViewToDoViewController {
+            if let selectedTodo = sender as? ToDo {
+                modifyVC.todo = selectedTodo
+                
+            }
+        }
+    }*/
+
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let timerVC = segue.destination as? StopwatchVC {
+            if let selectedTimer = sender as? Timer {
+                timerVC.timer = selectedTimer
+                
+            }
+        }
+    }*/
+    
     @IBAction func AddButton(_ sender: Any) {
         let type: Int32 = wodtimer.wodtypes.countdown.rawValue
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {

@@ -17,6 +17,7 @@
 		897188EA22802D4E0074792C /* NewCountdownVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897188E922802D4E0074792C /* NewCountdownVC.swift */; };
 		897188EC22802D630074792C /* NewIntervalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897188EB22802D630074792C /* NewIntervalVC.swift */; };
 		897188EE22802F7E0074792C /* timermodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897188ED22802F7E0074792C /* timermodel.swift */; };
+		897188F0228040A00074792C /* StopwatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897188EF228040A00074792C /* StopwatchVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		897188E922802D4E0074792C /* NewCountdownVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCountdownVC.swift; sourceTree = "<group>"; };
 		897188EB22802D630074792C /* NewIntervalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIntervalVC.swift; sourceTree = "<group>"; };
 		897188ED22802F7E0074792C /* timermodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timermodel.swift; sourceTree = "<group>"; };
+		897188EF228040A00074792C /* StopwatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopwatchVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 				895908D3227F211900F72B58 /* AppDelegate.swift */,
 				895908D5227F211900F72B58 /* ViewController.swift */,
 				895908D7227F211A00F72B58 /* Main.storyboard */,
+				897188EF228040A00074792C /* StopwatchVC.swift */,
 				897188E7228029F70074792C /* NewStopwatchVC.swift */,
 				897188ED22802F7E0074792C /* timermodel.swift */,
 				897188E922802D4E0074792C /* NewCountdownVC.swift */,
@@ -152,6 +155,7 @@
 			files = (
 				897188EC22802D630074792C /* NewIntervalVC.swift in Sources */,
 				895908DC227F211A00F72B58 /* Adrenalab_Timer.xcdatamodeld in Sources */,
+				897188F0228040A00074792C /* StopwatchVC.swift in Sources */,
 				895908D6227F211900F72B58 /* ViewController.swift in Sources */,
 				895908D4227F211900F72B58 /* AppDelegate.swift in Sources */,
 				897188EA22802D4E0074792C /* NewCountdownVC.swift in Sources */,
