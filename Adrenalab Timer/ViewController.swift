@@ -16,7 +16,6 @@ struct wodtimer {
     var numintervals: Int = 1
     var timervalue: Int = 0
     
-    
     var type = wodtypes.stopwatch
 
     //default constuctor with only name we will assume it is a stopwatch

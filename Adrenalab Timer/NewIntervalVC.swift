@@ -39,8 +39,15 @@ class NewIntervalVC: UIViewController {
             let currtimer = Wodtimer(context: context)
             
             currtimer.name = timername.text
-            currtimer.numintervals = 0
-            currtimer.timervalue = 0
+            guard let numintervalstext = rounds.text else {
+                print("invalid input")
+                return
+            }
+            guard let numintervalsnum = Int32(numintervalstext) else {
+                return
+            }
+            currtimer.numintervals = numintervalsnum
+            currtimer.timervalue = Int32(countdown.countDownDuration)
             currtimer.type = type
             //saving
             do {
