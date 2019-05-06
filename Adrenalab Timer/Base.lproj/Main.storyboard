@@ -50,7 +50,7 @@
         <!--Countdown-->
         <scene sceneID="oMs-L5-Yc6">
             <objects>
-                <viewController id="Vsp-vc-hto" sceneMemberID="viewController">
+                <viewController id="Vsp-vc-hto" customClass="NewCountdownVC" customModule="Adrenalab_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3sd-ha-ghE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -59,6 +59,9 @@
                                 <rect key="frame" x="30" y="548" width="364" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="savebutton:" destination="Vsp-vc-hto" eventType="touchUpInside" id="tMa-7G-Nhy"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Countdown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEg-X0-ekk">
                                 <rect key="frame" x="0.0" y="98" width="414" height="48"/>
@@ -99,6 +102,10 @@
                         <viewLayoutGuide key="safeArea" id="iM5-Eg-uey"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Countdown" id="kvY-6V-3hc"/>
+                    <connections>
+                        <outlet property="countdown" destination="cj1-zn-tDo" id="zcZ-zU-BZ1"/>
+                        <outlet property="timernamelabel" destination="3CR-uD-DCb" id="JtN-5p-3u6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LdG-eL-5LA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -107,7 +114,7 @@
         <!--Interval-->
         <scene sceneID="rcp-WF-0Ph">
             <objects>
-                <viewController id="kEF-tg-7B7" sceneMemberID="viewController">
+                <viewController id="kEF-tg-7B7" customClass="NewIntervalVC" customModule="Adrenalab_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AtF-Bb-JPm">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -152,6 +159,9 @@
                                 <rect key="frame" x="180" y="603" width="54" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="savebutton:" destination="kEF-tg-7B7" eventType="touchUpInside" id="dE3-bl-CSo"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -181,6 +191,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Interval" id="gP6-mr-QCu"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="countdown" destination="bKb-Jr-4p5" id="7Sx-WN-tPm"/>
+                        <outlet property="rounds" destination="6HJ-8E-S5u" id="SEt-vq-svX"/>
+                        <outlet property="timername" destination="uLG-Dh-2AQ" id="Ltb-Nc-eJb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3zy-md-WFh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

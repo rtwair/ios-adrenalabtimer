@@ -16,6 +16,7 @@
 		897188E8228029F70074792C /* NewStopwatchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897188E7228029F70074792C /* NewStopwatchVC.swift */; };
 		897188EA22802D4E0074792C /* NewCountdownVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897188E922802D4E0074792C /* NewCountdownVC.swift */; };
 		897188EC22802D630074792C /* NewIntervalVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897188EB22802D630074792C /* NewIntervalVC.swift */; };
+		897188EE22802F7E0074792C /* timermodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 897188ED22802F7E0074792C /* timermodel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		897188E7228029F70074792C /* NewStopwatchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewStopwatchVC.swift; sourceTree = "<group>"; };
 		897188E922802D4E0074792C /* NewCountdownVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCountdownVC.swift; sourceTree = "<group>"; };
 		897188EB22802D630074792C /* NewIntervalVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewIntervalVC.swift; sourceTree = "<group>"; };
+		897188ED22802F7E0074792C /* timermodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timermodel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				895908D5227F211900F72B58 /* ViewController.swift */,
 				895908D7227F211A00F72B58 /* Main.storyboard */,
 				897188E7228029F70074792C /* NewStopwatchVC.swift */,
+				897188ED22802F7E0074792C /* timermodel.swift */,
 				897188E922802D4E0074792C /* NewCountdownVC.swift */,
 				897188EB22802D630074792C /* NewIntervalVC.swift */,
 				895908DD227F211C00F72B58 /* Assets.xcassets */,
@@ -153,6 +156,7 @@
 				895908D4227F211900F72B58 /* AppDelegate.swift in Sources */,
 				897188EA22802D4E0074792C /* NewCountdownVC.swift in Sources */,
 				897188E8228029F70074792C /* NewStopwatchVC.swift in Sources */,
+				897188EE22802F7E0074792C /* timermodel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

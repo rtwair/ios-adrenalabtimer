@@ -7,6 +7,7 @@
 //
 
 import UIKit
+//import timermodel.swift
 
 class NewStopwatchVC: UIViewController {
     @IBOutlet weak var TimerNameLabel: UITextField!
@@ -18,8 +19,8 @@ class NewStopwatchVC: UIViewController {
     }
     
     let STOPWATCH: Int32 = 0
-    let COUNTDOWN = 1
-    let INTERVAL = 2
+    let COUNTDOWN: Int32 = 1
+    let INTERVAL:Int32 = 2
 
     @IBAction func AddTapped(_ sender: Any) {
         let type: Int32 = STOPWATCH
