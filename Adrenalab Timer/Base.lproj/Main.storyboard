@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="p2r-rH-Y5Z">
-    <device id="retina6_1" orientation="landscape">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,15 +15,15 @@
             <objects>
                 <tableViewController id="w7q-Ga-AcP" customClass="ViewController" customModule="Adrenalab_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="e9c-0v-lkg">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="AgO-HL-FSI">
-                                <rect key="frame" x="0.0" y="28" width="896" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AgO-HL-FSI" id="VqN-fX-cR2">
-                                    <rect key="frame" x="44" y="0.0" width="808" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -59,11 +59,11 @@
             <objects>
                 <viewController id="Vsp-vc-hto" customClass="NewCountdownVC" customModule="Adrenalab_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3sd-ha-ghE">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5d-N7-TOs">
-                                <rect key="frame" x="421" y="354" width="54" height="42"/>
+                                <rect key="frame" x="180" y="452" width="54" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
@@ -71,19 +71,19 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Countdown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEg-X0-ekk">
-                                <rect key="frame" x="64" y="54" width="768" height="48"/>
+                                <rect key="frame" x="20" y="98" width="374" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name Your Timer" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3CR-uD-DCb">
-                                <rect key="frame" x="64" y="122" width="768" height="30"/>
+                                <rect key="frame" x="20" y="166" width="374" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cj1-zn-tDo">
-                                <rect key="frame" x="64" y="172" width="768" height="162"/>
+                                <rect key="frame" x="20" y="216" width="374" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="578823433.65937102">
                                     <!--2019-05-06 08:17:13 +0000-->
                                 </date>
@@ -108,7 +108,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iM5-Eg-uey"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Countdown" id="kvY-6V-3hc"/>
+                    <tabBarItem key="tabBarItem" title="Countdown" image="hourglass" largeContentSizeImage="close" id="kvY-6V-3hc"/>
                     <connections>
                         <outlet property="countdown" destination="cj1-zn-tDo" id="zcZ-zU-BZ1"/>
                         <outlet property="timernamelabel" destination="3CR-uD-DCb" id="JtN-5p-3u6"/>
@@ -123,35 +123,35 @@
             <objects>
                 <viewController id="kEF-tg-7B7" customClass="NewIntervalVC" customModule="Adrenalab_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AtF-Bb-JPm">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="bKb-Jr-4p5">
-                                <rect key="frame" x="44" y="227" width="852" height="162"/>
+                                <rect key="frame" x="0.0" y="271" width="414" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="578823760.88582003">
                                     <!--2019-05-06 08:22:40 +0000-->
                                 </date>
                             </datePicker>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name Your Timer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uLG-Dh-2AQ">
-                                <rect key="frame" x="69" y="122" width="758" height="30"/>
+                                <rect key="frame" x="25" y="166" width="364" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of rounds" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6HJ-8E-S5u">
-                                <rect key="frame" x="69" y="172" width="758" height="30"/>
+                                <rect key="frame" x="25" y="216" width="364" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interval" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Hy-sY-K4X">
-                                <rect key="frame" x="44" y="54" width="808" height="48"/>
+                                <rect key="frame" x="0.0" y="98" width="414" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZh-hu-SIo">
-                                <rect key="frame" x="421" y="393" width="54" height="42"/>
+                                <rect key="frame" x="180" y="491" width="54" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
@@ -178,7 +178,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5JJ-ty-eXU"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Interval" id="gP6-mr-QCu"/>
+                    <tabBarItem key="tabBarItem" title="Interval" image="timer" id="gP6-mr-QCu"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="countdown" destination="bKb-Jr-4p5" id="7Sx-WN-tPm"/>
@@ -195,23 +195,23 @@
             <objects>
                 <viewController id="wqg-Sl-SFN" customClass="NewStopwatchVC" customModule="Adrenalab_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M6g-yN-egb">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stopwatch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgi-MN-Rif">
-                                <rect key="frame" x="44" y="49" width="808" height="48"/>
+                                <rect key="frame" x="0.0" y="93" width="414" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name Your Timer" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6cH-bm-d0M">
-                                <rect key="frame" x="69" y="117" width="758" height="30"/>
+                                <rect key="frame" x="25" y="161" width="364" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUh-PE-Pt7">
-                                <rect key="frame" x="421" y="167" width="54" height="42"/>
+                                <rect key="frame" x="180" y="211" width="54" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
@@ -232,7 +232,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YbO-Cd-4t1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Stopwatch" id="fHT-gt-8dM"/>
+                    <tabBarItem key="tabBarItem" title="Stopwatch" image="stopwatch" id="fHT-gt-8dM"/>
                     <connections>
                         <outlet property="TimerNameLabel" destination="6cH-bm-d0M" id="RjZ-sJ-JuG"/>
                     </connections>
@@ -265,17 +265,17 @@
             <objects>
                 <viewController id="s94-d7-AeA" customClass="StopwatchVC" customModule="Adrenalab_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sNN-DI-7sv">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAb-mZ-jgi">
-                                <rect key="frame" x="261.5" y="99.5" width="373.5" height="215"/>
+                                <rect key="frame" x="20.5" y="340.5" width="373.5" height="215"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="180"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lh7-lm-730">
-                                <rect key="frame" x="54" y="10" width="34" height="30"/>
+                                <rect key="frame" x="10" y="54" width="34" height="30"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
                                 <state key="normal" title="Back"/>
                                 <connections>
@@ -283,7 +283,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wpz-TI-9KZ">
-                                <rect key="frame" x="802" y="329" width="40" height="54"/>
+                                <rect key="frame" x="364" y="798" width="40" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="▶️"/>
                                 <connections>
@@ -315,6 +315,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="TimerLabel" destination="dAb-mZ-jgi" id="zbj-it-sMi"/>
+                        <outlet property="playPauseBtn" destination="Wpz-TI-9KZ" id="aNI-NB-w0X"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kt8-VB-UV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -327,7 +328,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="p2r-rH-Y5Z" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="oKz-YG-00h">
-                        <rect key="frame" x="0.0" y="0.0" width="896" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -340,4 +341,10 @@
             <point key="canvasLocation" x="102.89855072463769" y="130.58035714285714"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="close" width="32" height="32"/>
+        <image name="hourglass" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="stopwatch" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="timer" width="21.333333969116211" height="21.333333969116211"/>
+    </resources>
 </document>

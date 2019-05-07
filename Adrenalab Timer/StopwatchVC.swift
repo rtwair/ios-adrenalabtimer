@@ -72,12 +72,15 @@ class StopwatchVC: UIViewController {
         }
     }
     
+    @IBOutlet weak var playPauseBtn: UIButton!
     @IBAction func PlayPauseButton(_ sender: Any) {
         guard let timertype = timer?.type else {
             print("invalid type")
             return
         }
         if !timerRunning {
+            playPauseBtn.setTitle("⏸", for: UIControl.State.normal)
+
             if (timertype == Timermodel.wodtypes.stopwatch.rawValue) {
                 countingTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(stopwatchTimer), userInfo: "Tick", repeats: true)
                 
@@ -90,6 +93,7 @@ class StopwatchVC: UIViewController {
         } else {
             countingTimer?.invalidate() // pauses aka stops the timer
             timerRunning = false
+            playPauseBtn.setTitle("▶️", for: UIControl.State.normal)
         }
 
     }
