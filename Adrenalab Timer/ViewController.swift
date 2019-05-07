@@ -8,48 +8,16 @@
 
 import UIKit
 
-struct wodtimer {
-    var name: String = ""
-    enum wodtypes: Int32 {
-        case stopwatch, countdown, interval
-    }
-    var numintervals: Int = 1
-    var timervalue: Int = 0
-    
-    var type = wodtypes.stopwatch
-
-    //default constuctor with only name we will assume it is a stopwatch
-    init(name: String) {
-        self.name = name
-        self.type = wodtypes.stopwatch
-    }
-    //countdown constructor
-    init(name: String, type: wodtypes, timervalue: Int) {
-        self.name = name
-        self.type = type
-        self.timervalue = timervalue
-    }
-    //interval type
-    init(name: String, type: wodtypes, timervalue: Int, numintervals: Int) {
-        self.name = name
-        self.type = type
-        self.timervalue = timervalue
-        self.numintervals = numintervals
-    }
-}
-
-
 
 class ViewController: UITableViewController {
 
     var timers: [[Wodtimer]] = [[],[],[]]
-    let STOPWATCH = 0
-    let COUNTDOWN = 1
-    let INTERVAL = 2
+    let STOPWATCH = Int(Timermodel.wodtypes.stopwatch.rawValue)
+    let COUNTDOWN = Int(Timermodel.wodtypes.countdown.rawValue)
+    let INTERVAL = Int(Timermodel.wodtypes.interval.rawValue)
 
     override func viewDidAppear(_ animated: Bool) {
         fetchUserTimers()
-
     }
     
     func fetchUserTimers() {
@@ -103,11 +71,11 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
-        case STOPWATCH:
+        case Int(Timermodel.wodtypes.stopwatch.rawValue):
             return "Stopwatch"
-        case COUNTDOWN:
+        case Int(Timermodel.wodtypes.countdown.rawValue):
             return "Countdown"
-        case INTERVAL:
+        case Int(Timermodel.wodtypes.interval.rawValue):
             return "Interval"
         default:
             return "\(section)"
@@ -130,15 +98,6 @@ class ViewController: UITableViewController {
             }
         }
     }
-
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let timerVC = segue.destination as? StopwatchVC {
-            if let selectedTimer = sender as? Timer {
-                timerVC.timer = selectedTimer
-                
-            }
-        }
-    }*/
     
     @IBAction func AddButton(_ sender: Any) {
     }

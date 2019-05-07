@@ -58,8 +58,13 @@ class StopwatchVC: UIViewController {
         TimerLabel.text = Timermodel.secondsToTimer(totalseconds: currTimerValue)
     }
     @objc func countdownTimer() {
-        currTimerValue -= 1
-        TimerLabel.text = Timermodel.secondsToTimer(totalseconds: currTimerValue)
+        if currTimerValue > 0 {
+            currTimerValue -= 1
+            TimerLabel.text = Timermodel.secondsToTimer(totalseconds: currTimerValue)
+        } else {
+            countingTimer?.invalidate()
+            timerRunning = false
+        }
     }
     @IBAction func ResetButton(_ sender: Any) {
         if !timerRunning {

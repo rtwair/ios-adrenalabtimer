@@ -13,12 +13,10 @@ class NewIntervalVC: UIViewController {
     @IBOutlet weak var timername: UITextField!
     @IBOutlet weak var rounds: UITextField!
     @IBOutlet weak var countdown: UIDatePicker!
-    override func viewDidLoad() {
-        
-    super.viewDidLoad()
-
-    }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 
     @IBAction func savebutton(_ sender: Any) {
         let type: Int32 = Timermodel.wodtypes.interval.rawValue
