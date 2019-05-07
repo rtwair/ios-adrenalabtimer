@@ -34,7 +34,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Adrenalab Timer" id="NOn-o8-DlE">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Wdv-Gh-LPE"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Wdv-Gh-LPE">
+                            <connections>
+                                <action selector="editButton:" destination="w7q-Ga-AcP" id="1g7-rf-udL"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="nV0-VG-BGI">
                             <connections>
                                 <action selector="AddButton:" destination="w7q-Ga-AcP" id="wqD-ic-0Ja"/>
