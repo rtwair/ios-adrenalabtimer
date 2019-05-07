@@ -10,10 +10,6 @@ import UIKit
 
 class NewCountdownVC: UIViewController {
 
-    let STOPWATCH: Int32 = 0
-    let COUNTDOWN: Int32 = 1
-    let INTERVAL: Int32 = 2
-
     @IBOutlet weak var timernamelabel: UITextField!
     @IBOutlet weak var countdown: UIDatePicker!
     override func viewDidLoad() {
@@ -24,7 +20,7 @@ class NewCountdownVC: UIViewController {
     
 
     @IBAction func savebutton(_ sender: Any) {
-        let type: Int32 = COUNTDOWN
+        let type: Int32 = Timermodel.wodtypes.countdown.rawValue
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             let currtimer = Wodtimer(context: context)
 

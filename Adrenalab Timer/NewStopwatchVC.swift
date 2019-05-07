@@ -14,15 +14,12 @@ class NewStopwatchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+
     }
     
-    let STOPWATCH: Int32 = 0
-    let COUNTDOWN: Int32 = 1
-    let INTERVAL:Int32 = 2
 
     @IBAction func AddTapped(_ sender: Any) {
-        let type: Int32 = STOPWATCH
+        let type: Int32 = Timermodel.wodtypes.stopwatch.rawValue
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             let currtimer = Wodtimer(context: context)
             
