@@ -145,23 +145,6 @@ class ViewController: UITableViewController {
     }*/
     
     @IBAction func AddButton(_ sender: Any) {
-        let type: Int32 = wodtimer.wodtypes.countdown.rawValue
-        if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
-            let currtimer = Wodtimer(context: context)
-            
-            currtimer.name = "int"
-            currtimer.numintervals = 1
-            currtimer.timervalue = 1
-            currtimer.type = type
-            print(currtimer)
-            //saving
-            do {
-                try context.save()
-            } catch {
-                print("Failed saving")
-            }
-        }
-        fetchUserTimers()
     }
 
 }
