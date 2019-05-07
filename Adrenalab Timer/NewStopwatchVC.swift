@@ -20,8 +20,11 @@ class NewStopwatchVC: UIViewController {
         let type: Int32 = Timermodel.wodtypes.stopwatch.rawValue
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             let currtimer = Wodtimer(context: context)
-            
-            currtimer.name = TimerNameLabel.text
+            if TimerNameLabel.text != "" {
+                currtimer.name = TimerNameLabel.text
+            } else {
+                currtimer.name = "Stopwatch"
+            }
             currtimer.numintervals = 0
             currtimer.timervalue = 0
             currtimer.type = type

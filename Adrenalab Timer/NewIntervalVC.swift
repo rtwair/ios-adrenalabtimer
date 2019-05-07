@@ -23,9 +23,14 @@ class NewIntervalVC: UIViewController {
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             let currtimer = Wodtimer(context: context)
             
-            currtimer.name = timername.text
+            if timername.text != "" {
+                currtimer.name = timername.text
+            } else {
+                currtimer.name = "Interval"
+            }
             guard let numintervalstext = rounds.text else {
-                print("invalid input")
+                let alert = UIAlertController(title: "Enter Rounds", message: "Please enter number of rounds.", preferredStyle: .alert)
+                self.present(alert, animated: true)
                 return
             }
             guard let numintervalsnum = Int32(numintervalstext) else {

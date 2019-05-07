@@ -23,8 +23,11 @@ class NewCountdownVC: UIViewController {
         let type: Int32 = Timermodel.wodtypes.countdown.rawValue
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             let currtimer = Wodtimer(context: context)
-
-            currtimer.name = timernamelabel.text
+            if timernamelabel.text != "" {
+                currtimer.name = timernamelabel.text
+            } else {
+                currtimer.name = "Countdown"
+            }
             currtimer.numintervals = 0
             currtimer.timervalue = Int32(countdown.countDownDuration)
 

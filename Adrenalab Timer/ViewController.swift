@@ -15,7 +15,6 @@ class ViewController: UITableViewController {
     let STOPWATCH = Int(Timermodel.wodtypes.stopwatch.rawValue)
     let COUNTDOWN = Int(Timermodel.wodtypes.countdown.rawValue)
     let INTERVAL = Int(Timermodel.wodtypes.interval.rawValue)
-    var editMode = false
 
     override func viewDidAppear(_ animated: Bool) {
         fetchUserTimers()
@@ -49,8 +48,6 @@ class ViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        
         return timers[section].count
     }
     
@@ -104,9 +101,8 @@ class ViewController: UITableViewController {
     }
 
     @IBAction func editButton(_ sender: Any) {
-        editMode = !editMode
 
-        setEditing(editMode, animated: true)
+        setEditing(!isEditing, animated: true)
     }
 }
 
