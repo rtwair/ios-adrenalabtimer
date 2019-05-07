@@ -19,26 +19,30 @@ class StopwatchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.landscapeRight, andRotateTo: UIInterfaceOrientation.landscapeRight)
-
+        resetView()
+    }
+    func resetView() {
         guard let timertype = timer?.type else {
             print("error unwrapping")
             return
         }
-        
-        if (timertype == Timermodel.wodtypes.countdown.rawValue) {
+        if (timertype == Timermodel.wodtypes.stopwatch.rawValue) {
+            currTimerValue = 0
+            TimerLabel.text = Timermodel.secondsToTimer(totalseconds: currTimerValue)
+        }
+        else if (timertype == Timermodel.wodtypes.countdown.rawValue) {
             guard let timervalue = timer?.timervalue else {
                 print("invalid value")
                 return
             }
             currTimerValue = timervalue
             TimerLabel.text = Timermodel.secondsToTimer(totalseconds: timervalue)
-            print("i'm a countdown with timer value of \(timervalue)")
+
         } else if (timertype == Timermodel.wodtypes.interval.rawValue) {
             //set up interval view
         }
-        // Do any additional setup after loading the view.
+
     }
-    
     override func viewWillAppear(_ animated: Bool) {
         
         AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.landscapeRight, andRotateTo: UIInterfaceOrientation.landscapeRight)
@@ -50,22 +54,20 @@ class StopwatchVC: UIViewController {
     }
 
     @objc func stopwatchTimer() {
-   
-        
         currTimerValue += 1
-        //TimerLabel.text = String(currTimerValue)
         TimerLabel.text = Timermodel.secondsToTimer(totalseconds: currTimerValue)
     }
     @objc func countdownTimer() {
         currTimerValue -= 1
-        //TimerLabel.text = String(currTimerValue)
         TimerLabel.text = Timermodel.secondsToTimer(totalseconds: currTimerValue)
     }
     @IBAction func ResetButton(_ sender: Any) {
+        if !timerRunning {
+            resetView()
+        }
     }
     
     @IBAction func PlayPauseButton(_ sender: Any) {
-        //countingTimer = Timer.scheduledTimer(timeInterval: tickRate, target: self, selector: #selector(onTimerTick), userInfo: "Tick: ", repeats: true)
         guard let timertype = timer?.type else {
             print("invalid type")
             return
@@ -86,14 +88,5 @@ class StopwatchVC: UIViewController {
         }
 
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
