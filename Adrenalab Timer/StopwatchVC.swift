@@ -10,11 +10,26 @@ import UIKit
 
 class StopwatchVC: UIViewController {
 
-    let timer: Wodtimer? = nil
+    var timer: Wodtimer? = nil
     
+    @IBOutlet weak var TimerLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.landscapeRight, andRotateTo: UIInterfaceOrientation.landscapeRight)
 
+        guard let timertype = timer?.type else {
+            print("error unwrapping")
+            return
+        }
+        
+        if (timertype == Timermodel.wodtypes.countdown.rawValue) {
+            guard let timervalue = timer?.timervalue else {
+                print("invalid value")
+                return
+            }
+            TimerLabel.text = Timermodel.secondsToTimer(totalseconds: timervalue)
+            print("i'm a countdown with timer value of \(timervalue)")
+        }
         // Do any additional setup after loading the view.
     }
     
@@ -28,6 +43,10 @@ class StopwatchVC: UIViewController {
         AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.portrait, andRotateTo: UIInterfaceOrientation.portrait)
     }
 
+    @IBAction func ResetButton(_ sender: Any) {
+    }
+    @IBAction func PlayPauseButton(_ sender: Any) {
+    }
     /*
     // MARK: - Navigation
 

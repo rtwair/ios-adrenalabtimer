@@ -123,17 +123,13 @@ class ViewController: UITableViewController {
         performSegue(withIdentifier: "toTimerVC", sender: selectedTimer)
     }
     
-   /* override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let createVC = segue.destination as? AddViewController {
-            createVC.toDoTableVC = self
-        }
-        if let modifyVC = segue.destination as? ViewToDoViewController {
-            if let selectedTodo = sender as? ToDo {
-                modifyVC.todo = selectedTodo
-                
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let swatchvc = segue.destination as? StopwatchVC {
+            if let selectedtimer = sender as? Wodtimer {
+                swatchvc.timer = selectedtimer
             }
         }
-    }*/
+    }
 
     /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let timerVC = segue.destination as? StopwatchVC {
