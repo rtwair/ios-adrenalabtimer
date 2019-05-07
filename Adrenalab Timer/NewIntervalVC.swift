@@ -41,7 +41,7 @@ class NewIntervalVC: UIViewController {
                 print("Failed saving")
             }
         }
-
+        navigationController?.popViewController(animated: true)
     }
     
 }

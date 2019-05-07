@@ -14,10 +14,8 @@ class NewStopwatchVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-
     }
     
-
     @IBAction func AddTapped(_ sender: Any) {
         let type: Int32 = Timermodel.wodtypes.stopwatch.rawValue
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
@@ -35,6 +33,7 @@ class NewStopwatchVC: UIViewController {
                 print("Failed saving")
             }
         }
+        navigationController?.popViewController(animated: true)
     }
 
 }

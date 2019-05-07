@@ -36,7 +36,7 @@ class NewCountdownVC: UIViewController {
                 print("Failed saving")
             }
         }
-
+        navigationController?.popViewController(animated: true)
     }
     
 }
