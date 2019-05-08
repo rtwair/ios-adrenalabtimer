@@ -291,7 +291,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mt-YG-9DK">
-                                <rect key="frame" x="51" y="329" width="40" height="54"/>
+                                <rect key="frame" x="20" y="798" width="40" height="54"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
                                 <state key="normal" title="🔃"/>
                                 <connections>
@@ -305,7 +305,7 @@
                             <constraint firstItem="dAb-mZ-jgi" firstAttribute="centerX" secondItem="sNN-DI-7sv" secondAttribute="centerX" id="4wS-WN-egR"/>
                             <constraint firstItem="0mt-YG-9DK" firstAttribute="leading" secondItem="tLA-55-va3" secondAttribute="leading" constant="10" id="bDc-GX-C3c"/>
                             <constraint firstItem="dAb-mZ-jgi" firstAttribute="centerY" secondItem="sNN-DI-7sv" secondAttribute="centerY" id="emC-B4-gWJ"/>
-                            <constraint firstItem="0mt-YG-9DK" firstAttribute="bottom" secondItem="tLA-55-va3" secondAttribute="bottom" constant="10" id="mKz-vS-uAA"/>
+                            <constraint firstItem="0mt-YG-9DK" firstAttribute="bottom" secondItem="tLA-55-va3" secondAttribute="bottom" constant="-10" id="mKz-vS-uAA"/>
                             <constraint firstItem="Lh7-lm-730" firstAttribute="top" secondItem="tLA-55-va3" secondAttribute="top" constant="10" id="rtc-qd-FbB"/>
                             <constraint firstItem="tLA-55-va3" firstAttribute="trailing" secondItem="Wpz-TI-9KZ" secondAttribute="trailing" constant="10" id="to3-TZ-Yjl"/>
                             <constraint firstItem="Lh7-lm-730" firstAttribute="leading" secondItem="tLA-55-va3" secondAttribute="leading" constant="10" id="ycz-7c-xRh"/>
