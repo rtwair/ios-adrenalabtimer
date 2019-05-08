@@ -298,11 +298,20 @@
                                     <action selector="ResetButton:" destination="s94-d7-AeA" eventType="touchUpInside" id="Lc1-ql-y93"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oJ-91-45k">
+                                <rect key="frame" x="10" y="279" width="394" height="45"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="tLA-55-va3" firstAttribute="bottom" secondItem="Wpz-TI-9KZ" secondAttribute="bottom" constant="10" id="2Em-bu-6gZ"/>
                             <constraint firstItem="dAb-mZ-jgi" firstAttribute="centerX" secondItem="sNN-DI-7sv" secondAttribute="centerX" id="4wS-WN-egR"/>
+                            <constraint firstItem="tLA-55-va3" firstAttribute="trailing" secondItem="6oJ-91-45k" secondAttribute="trailing" constant="10" id="5r7-8d-Za4"/>
+                            <constraint firstItem="dAb-mZ-jgi" firstAttribute="top" secondItem="6oJ-91-45k" secondAttribute="bottom" constant="16.5" id="GMA-F1-3Yw"/>
+                            <constraint firstItem="6oJ-91-45k" firstAttribute="leading" secondItem="tLA-55-va3" secondAttribute="leading" constant="10" id="WBe-56-5D5"/>
                             <constraint firstItem="0mt-YG-9DK" firstAttribute="leading" secondItem="tLA-55-va3" secondAttribute="leading" constant="10" id="bDc-GX-C3c"/>
                             <constraint firstItem="dAb-mZ-jgi" firstAttribute="centerY" secondItem="sNN-DI-7sv" secondAttribute="centerY" id="emC-B4-gWJ"/>
                             <constraint firstItem="0mt-YG-9DK" firstAttribute="bottom" secondItem="tLA-55-va3" secondAttribute="bottom" constant="-10" id="mKz-vS-uAA"/>
@@ -314,6 +323,7 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="RoundNumber" destination="6oJ-91-45k" id="ypP-17-RcO"/>
                         <outlet property="TimerLabel" destination="dAb-mZ-jgi" id="zbj-it-sMi"/>
                         <outlet property="playPauseBtn" destination="Wpz-TI-9KZ" id="aNI-NB-w0X"/>
                     </connections>

@@ -12,16 +12,20 @@ class StopwatchVC: UIViewController {
 
     var timer: Wodtimer? = nil
     var currTimerValue: Int32 = 0
+    var currRound = 1
+    var totalRounds = 1
     
     var countingTimer: Timer?
     var timerRunning: Bool = false
     @IBOutlet weak var TimerLabel: UILabel!
+    @IBOutlet weak var RoundNumber: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.landscapeRight, andRotateTo: UIInterfaceOrientation.landscapeRight)
         resetView()
     }
     func resetView() {
+        RoundNumber.isHidden = true
         guard let timertype = timer?.type else {
             print("error unwrapping")
             return
@@ -40,6 +44,18 @@ class StopwatchVC: UIViewController {
 
         } else if (timertype == Timermodel.wodtypes.interval.rawValue) {
             //set up interval view
+            guard let timervalue = timer?.timervalue else {
+                return
+            }
+            guard let numrounds = timer?.numintervals else {
+                return
+            }
+            currTimerValue = timervalue
+            totalRounds = Int(numrounds)
+            RoundNumber.isHidden = false
+            TimerLabel.text = Timermodel.secondsToTimer(totalseconds: currTimerValue)
+            RoundNumber.text = "Round \(currRound) / \(numrounds)"
+            
         }
 
     }
@@ -66,6 +82,24 @@ class StopwatchVC: UIViewController {
             timerRunning = false
         }
     }
+    @objc func intervalTimer() {
+        if (currRound <= totalRounds) {
+            if currTimerValue > 0 {
+                currTimerValue -= 1
+                TimerLabel.text = Timermodel.secondsToTimer(totalseconds: currTimerValue)
+            } else {
+                currRound += 1
+                if currRound > totalRounds {
+                    currRound = totalRounds
+                    countingTimer?.invalidate()
+                    timerRunning = false
+                    playPauseBtn.setTitle("▶️", for: UIControl.State.normal)
+                } else {
+                    resetView()
+                }
+            }
+        }
+    }
     @IBAction func ResetButton(_ sender: Any) {
         if !timerRunning {
             resetView()
@@ -74,11 +108,14 @@ class StopwatchVC: UIViewController {
     
     @IBOutlet weak var playPauseBtn: UIButton!
     @IBAction func PlayPauseButton(_ sender: Any) {
+        
         guard let timertype = timer?.type else {
             print("invalid type")
             return
         }
         if !timerRunning {
+            resetView()
+
             playPauseBtn.setTitle("⏸", for: UIControl.State.normal)
 
             if (timertype == Timermodel.wodtypes.stopwatch.rawValue) {
@@ -87,7 +124,7 @@ class StopwatchVC: UIViewController {
             } else if (timertype == Timermodel.wodtypes.countdown.rawValue) {
                 countingTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdownTimer), userInfo: "Tick", repeats: true)
             } else if (timertype == Timermodel.wodtypes.interval.rawValue) {
-                
+                countingTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(intervalTimer), userInfo: "Tick", repeats: true)
             }
             timerRunning = true
         } else {
