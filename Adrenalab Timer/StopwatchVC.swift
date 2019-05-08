@@ -14,9 +14,12 @@ class StopwatchVC: UIViewController {
     var currTimerValue: Int32 = 0
     var currRound = 1
     var totalRounds = 1
+    var timerComplete = false
     
     var countingTimer: Timer?
     var timerRunning: Bool = false
+    
+    @IBOutlet weak var resetBtnO: UIButton!
     @IBOutlet weak var TimerLabel: UILabel!
     @IBOutlet weak var RoundNumber: UILabel!
     override func viewDidLoad() {
@@ -81,6 +84,7 @@ class StopwatchVC: UIViewController {
         } else {
             countingTimer?.invalidate()
             timerRunning = false
+            resetBtnO.isHidden = timerRunning
         }
     }
     
@@ -93,8 +97,10 @@ class StopwatchVC: UIViewController {
                 currRound += 1
                 if currRound > totalRounds {
                     currRound = totalRounds
+                    timerComplete = true
                     countingTimer?.invalidate()
                     timerRunning = false
+                    resetBtnO.isHidden = timerRunning
                     playPauseBtn.setImage(UIImage(named: "play.png"), for: UIControl.State.normal)
 
                 } else {
@@ -116,11 +122,15 @@ class StopwatchVC: UIViewController {
             print("invalid type")
             return
         }
-        if !timerRunning {
+        if timerComplete {
             resetView()
+            timerComplete = false
+        }
+        if !timerRunning {
+            //resetView()
 
             playPauseBtn.setImage(UIImage(named: "pause.png"), for: UIControl.State.normal)
-
+            
             if (timertype == Timermodel.wodtypes.stopwatch.rawValue) {
                 countingTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(stopwatchTimer), userInfo: "Tick", repeats: true)
             } else if (timertype == Timermodel.wodtypes.countdown.rawValue) {
@@ -129,9 +139,11 @@ class StopwatchVC: UIViewController {
                 countingTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(intervalTimer), userInfo: "Tick", repeats: true)
             }
             timerRunning = true
+            resetBtnO.isHidden = timerRunning
         } else {
             countingTimer?.invalidate() // pauses aka stops the timer
             timerRunning = false
+            resetBtnO.isHidden = timerRunning
             playPauseBtn.setImage(UIImage(named: "play.png"), for: UIControl.State.normal)
         }
     }

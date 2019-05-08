@@ -277,7 +277,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mt-YG-9DK">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mt-YG-9DK">
                                 <rect key="frame" x="20" y="809" width="49" height="43"/>
                                 <state key="normal" image="refresh"/>
                                 <connections>
@@ -306,6 +306,7 @@
                         <outlet property="RoundNumber" destination="6oJ-91-45k" id="ypP-17-RcO"/>
                         <outlet property="TimerLabel" destination="dAb-mZ-jgi" id="zbj-it-sMi"/>
                         <outlet property="playPauseBtn" destination="Wpz-TI-9KZ" id="aNI-NB-w0X"/>
+                        <outlet property="resetBtnO" destination="0mt-YG-9DK" id="NV5-L7-B04"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kt8-VB-UV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
