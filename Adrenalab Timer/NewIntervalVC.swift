@@ -16,6 +16,8 @@ class NewIntervalVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        countdown.setValue(UIColor.white, forKeyPath: "textColor")
+
     }
 
     @IBAction func savebutton(_ sender: Any) {

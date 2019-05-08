@@ -14,7 +14,7 @@ class NewCountdownVC: UIViewController {
     @IBOutlet weak var countdown: UIDatePicker!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        countdown.setValue(UIColor.white, forKeyPath: "textColor")
         // Do any additional setup after loading the view.
     }
     
