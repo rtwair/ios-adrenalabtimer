@@ -51,6 +51,7 @@ class StopwatchVC: UIViewController {
                 return
             }
             currTimerValue = timervalue
+            print("currtimevalue is = \(currTimerValue)")
             totalRounds = Int(numrounds)
             RoundNumber.isHidden = false
             TimerLabel.text = Timermodel.secondsToTimer(totalseconds: currTimerValue)

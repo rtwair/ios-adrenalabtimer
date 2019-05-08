@@ -38,6 +38,7 @@ class NewIntervalVC: UIViewController {
             }
             currtimer.numintervals = numintervalsnum
             currtimer.timervalue = Int32(countdown.countDownDuration)
+            print("timervalue while creating is \(currtimer.timervalue)")
             currtimer.type = type
             //saving
             do {
