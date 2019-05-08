@@ -56,10 +56,9 @@ class StopwatchVC: UIViewController {
             RoundNumber.isHidden = false
             TimerLabel.text = Timermodel.secondsToTimer(totalseconds: currTimerValue)
             RoundNumber.text = "Round \(currRound) / \(numrounds)"
-            
         }
-
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         
         AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.landscapeRight, andRotateTo: UIInterfaceOrientation.landscapeRight)
@@ -74,6 +73,7 @@ class StopwatchVC: UIViewController {
         currTimerValue += 1
         TimerLabel.text = Timermodel.secondsToTimer(totalseconds: currTimerValue)
     }
+    
     @objc func countdownTimer() {
         if currTimerValue > 0 {
             currTimerValue -= 1
@@ -83,6 +83,7 @@ class StopwatchVC: UIViewController {
             timerRunning = false
         }
     }
+    
     @objc func intervalTimer() {
         if (currRound <= totalRounds) {
             if currTimerValue > 0 {
@@ -94,13 +95,15 @@ class StopwatchVC: UIViewController {
                     currRound = totalRounds
                     countingTimer?.invalidate()
                     timerRunning = false
-                    playPauseBtn.setTitle("▶️", for: UIControl.State.normal)
+                    playPauseBtn.setImage(UIImage(named: "play.png"), for: UIControl.State.normal)
+
                 } else {
                     resetView()
                 }
             }
         }
     }
+    
     @IBAction func ResetButton(_ sender: Any) {
         if !timerRunning {
             resetView()
@@ -109,7 +112,6 @@ class StopwatchVC: UIViewController {
     
     @IBOutlet weak var playPauseBtn: UIButton!
     @IBAction func PlayPauseButton(_ sender: Any) {
-        
         guard let timertype = timer?.type else {
             print("invalid type")
             return
@@ -117,11 +119,10 @@ class StopwatchVC: UIViewController {
         if !timerRunning {
             resetView()
 
-            playPauseBtn.setTitle("⏸", for: UIControl.State.normal)
+            playPauseBtn.setImage(UIImage(named: "pause.png"), for: UIControl.State.normal)
 
             if (timertype == Timermodel.wodtypes.stopwatch.rawValue) {
                 countingTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(stopwatchTimer), userInfo: "Tick", repeats: true)
-                
             } else if (timertype == Timermodel.wodtypes.countdown.rawValue) {
                 countingTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(countdownTimer), userInfo: "Tick", repeats: true)
             } else if (timertype == Timermodel.wodtypes.interval.rawValue) {
@@ -131,9 +132,8 @@ class StopwatchVC: UIViewController {
         } else {
             countingTimer?.invalidate() // pauses aka stops the timer
             timerRunning = false
-            playPauseBtn.setTitle("▶️", for: UIControl.State.normal)
+            playPauseBtn.setImage(UIImage(named: "play.png"), for: UIControl.State.normal)
         }
-
     }
 
 }

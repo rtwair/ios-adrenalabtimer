@@ -34,6 +34,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Adrenalab Timer" id="NOn-o8-DlE">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Q0O-CT-d7N"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Wdv-Gh-LPE">
                             <connections>
                                 <action selector="editButton:" destination="w7q-Ga-AcP" id="1g7-rf-udL"/>
@@ -132,13 +133,13 @@
                                     <!--2019-05-06 08:22:40 +0000-->
                                 </date>
                             </datePicker>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name Your Timer" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uLG-Dh-2AQ">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name Your Timer" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uLG-Dh-2AQ">
                                 <rect key="frame" x="25" y="166" width="364" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of rounds" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6HJ-8E-S5u">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of rounds" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6HJ-8E-S5u">
                                 <rect key="frame" x="25" y="216" width="364" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -274,28 +275,19 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lh7-lm-730">
-                                <rect key="frame" x="10" y="54" width="34" height="30"/>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="15"/>
-                                <state key="normal" title="Back"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lh7-lm-730">
+                                <rect key="frame" x="10" y="54" width="32" height="32"/>
+                                <state key="normal" image="close"/>
                                 <connections>
                                     <segue destination="p2r-rH-Y5Z" kind="presentation" id="DnL-he-QTq"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wpz-TI-9KZ">
-                                <rect key="frame" x="364" y="798" width="40" height="54"/>
+                                <rect key="frame" x="356" y="804" width="48" height="48"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="▶️"/>
+                                <state key="normal" image="play"/>
                                 <connections>
                                     <action selector="PlayPauseButton:" destination="s94-d7-AeA" eventType="touchUpInside" id="TuQ-VN-Z29"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mt-YG-9DK">
-                                <rect key="frame" x="20" y="798" width="40" height="54"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <state key="normal" title="🔃"/>
-                                <connections>
-                                    <action selector="ResetButton:" destination="s94-d7-AeA" eventType="touchUpInside" id="Lc1-ql-y93"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oJ-91-45k">
@@ -304,6 +296,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0mt-YG-9DK">
+                                <rect key="frame" x="20" y="809" width="49" height="43"/>
+                                <state key="normal" image="refresh"/>
+                                <connections>
+                                    <action selector="ResetButton:" destination="s94-d7-AeA" eventType="touchUpInside" id="Lc1-ql-y93"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -330,7 +329,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kt8-VB-UV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="343" y="1069"/>
+            <point key="canvasLocation" x="340.57971014492756" y="1068.75"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="JOQ-Nh-zut">
@@ -354,6 +353,8 @@
     <resources>
         <image name="close" width="32" height="32"/>
         <image name="hourglass" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="play" width="48" height="48"/>
+        <image name="refresh" width="48" height="48"/>
         <image name="stopwatch" width="21.333333969116211" height="21.333333969116211"/>
         <image name="timer" width="21.333333969116211" height="21.333333969116211"/>
     </resources>
