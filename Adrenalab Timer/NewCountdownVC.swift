@@ -12,6 +12,12 @@ class NewCountdownVC: UIViewController {
 
     @IBOutlet weak var timernamelabel: UITextField!
     @IBOutlet weak var countdown: UIDatePicker!
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        parent?.title = "Add Countdown"
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         countdown.setValue(UIColor.white, forKeyPath: "textColor")

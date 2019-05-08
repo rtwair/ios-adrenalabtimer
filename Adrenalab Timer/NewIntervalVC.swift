@@ -14,6 +14,12 @@ class NewIntervalVC: UIViewController {
     @IBOutlet weak var rounds: UITextField!
     @IBOutlet weak var countdown: UIDatePicker!
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        parent?.title = "Add Interval Timer"
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         countdown.setValue(UIColor.white, forKeyPath: "textColor")

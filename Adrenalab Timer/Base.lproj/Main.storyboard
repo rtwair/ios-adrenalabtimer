@@ -14,18 +14,19 @@
         <scene sceneID="HE4-wa-c2O">
             <objects>
                 <tableViewController id="w7q-Ga-AcP" customClass="ViewController" customModule="Adrenalab_Timer" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="e9c-0v-lkg">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="e9c-0v-lkg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="sectionIndexColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <color key="sectionIndexColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="AgO-HL-FSI">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="AgO-HL-FSI" id="VqN-fX-cR2">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -35,7 +36,7 @@
                             <outlet property="delegate" destination="w7q-Ga-AcP" id="IYw-XR-Q1T"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Adrenalab Timer" id="NOn-o8-DlE">
+                    <navigationItem key="navigationItem" title="Adrenalab Timer" largeTitleDisplayMode="always" id="NOn-o8-DlE">
                         <barButtonItem key="backBarButtonItem" title="Back" id="Q0O-CT-d7N"/>
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Wdv-Gh-LPE">
                             <connections>
@@ -55,38 +56,33 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KOt-aI-q2m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1013.0434782608696" y="130.58035714285714"/>
+            <point key="canvasLocation" x="1061" y="19"/>
         </scene>
-        <!--Countdown-->
+        <!--Add Countdown-->
         <scene sceneID="oMs-L5-Yc6">
             <objects>
-                <viewController id="Vsp-vc-hto" customClass="NewCountdownVC" customModule="Adrenalab_Timer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add Countdown" id="Vsp-vc-hto" customClass="NewCountdownVC" customModule="Adrenalab_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3sd-ha-ghE">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5d-N7-TOs">
-                                <rect key="frame" x="180" y="364" width="54" height="42"/>
+                                <rect key="frame" x="181.5" y="306" width="51" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="ADD"/>
                                 <connections>
                                     <action selector="savebutton:" destination="Vsp-vc-hto" eventType="touchUpInside" id="tMa-7G-Nhy"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Countdown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEg-X0-ekk">
-                                <rect key="frame" x="20" y="10" width="374" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name Your Timer" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3CR-uD-DCb">
-                                <rect key="frame" x="20" y="78" width="374" height="30"/>
+                                <rect key="frame" x="20" y="20" width="374" height="30"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cj1-zn-tDo">
-                                <rect key="frame" x="20" y="128" width="374" height="216"/>
+                                <rect key="frame" x="20" y="70" width="374" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="578823433.65937102">
                                     <!--2019-05-06 08:17:13 +0000-->
                                 </date>
@@ -96,22 +92,19 @@
                         <constraints>
                             <constraint firstItem="cj1-zn-tDo" firstAttribute="leading" secondItem="iM5-Eg-uey" secondAttribute="leading" constant="20" id="3ju-ji-pgG"/>
                             <constraint firstItem="T5d-N7-TOs" firstAttribute="centerX" secondItem="3sd-ha-ghE" secondAttribute="centerX" id="HEG-Xi-8Dx"/>
-                            <constraint firstItem="3CR-uD-DCb" firstAttribute="top" secondItem="tEg-X0-ekk" secondAttribute="bottom" constant="20" id="Klc-Al-loR"/>
                             <constraint firstItem="iM5-Eg-uey" firstAttribute="trailing" secondItem="3CR-uD-DCb" secondAttribute="trailing" constant="20" id="OPY-63-c9Z"/>
-                            <constraint firstItem="tEg-X0-ekk" firstAttribute="leading" secondItem="iM5-Eg-uey" secondAttribute="leading" constant="20" id="Rsi-16-Y8v"/>
-                            <constraint firstItem="tEg-X0-ekk" firstAttribute="top" secondItem="iM5-Eg-uey" secondAttribute="top" constant="10" id="VNh-N1-HMx"/>
                             <constraint firstItem="3CR-uD-DCb" firstAttribute="leading" secondItem="iM5-Eg-uey" secondAttribute="leading" constant="20" id="ZFl-X9-c0z"/>
                             <constraint firstItem="cj1-zn-tDo" firstAttribute="centerX" secondItem="3sd-ha-ghE" secondAttribute="centerX" id="duu-kr-1Id"/>
+                            <constraint firstItem="3CR-uD-DCb" firstAttribute="top" secondItem="iM5-Eg-uey" secondAttribute="top" constant="20" id="g2H-WD-zrp"/>
                             <constraint firstItem="3CR-uD-DCb" firstAttribute="centerX" secondItem="3sd-ha-ghE" secondAttribute="centerX" id="gBY-9s-WBn"/>
                             <constraint firstItem="iM5-Eg-uey" firstAttribute="trailing" secondItem="cj1-zn-tDo" secondAttribute="trailing" constant="20" id="mLo-OE-M3A"/>
-                            <constraint firstItem="iM5-Eg-uey" firstAttribute="trailing" secondItem="tEg-X0-ekk" secondAttribute="trailing" constant="20" id="pO4-n8-Fdb"/>
-                            <constraint firstItem="tEg-X0-ekk" firstAttribute="centerX" secondItem="3sd-ha-ghE" secondAttribute="centerX" id="qmj-c3-dpC"/>
                             <constraint firstItem="cj1-zn-tDo" firstAttribute="top" secondItem="3CR-uD-DCb" secondAttribute="bottom" constant="20" id="qwr-Jt-0cq"/>
                             <constraint firstItem="T5d-N7-TOs" firstAttribute="top" secondItem="cj1-zn-tDo" secondAttribute="bottom" constant="20" id="xjs-be-kA9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iM5-Eg-uey"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Countdown" image="hourglass" largeContentSizeImage="close" id="kvY-6V-3hc"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="countdown" destination="cj1-zn-tDo" id="zcZ-zU-BZ1"/>
                         <outlet property="timernamelabel" destination="3CR-uD-DCb" id="JtN-5p-3u6"/>
@@ -121,42 +114,38 @@
             </objects>
             <point key="canvasLocation" x="1746" y="1069"/>
         </scene>
-        <!--Interval-->
+        <!--Add Interval timer-->
         <scene sceneID="rcp-WF-0Ph">
             <objects>
-                <viewController id="kEF-tg-7B7" customClass="NewIntervalVC" customModule="Adrenalab_Timer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add Interval timer" id="kEF-tg-7B7" customClass="NewIntervalVC" customModule="Adrenalab_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AtF-Bb-JPm">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bKb-Jr-4p5">
-                                <rect key="frame" x="0.0" y="183" width="414" height="216"/>
+                                <rect key="frame" x="0.0" y="125" width="414" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="578823760.88582003">
                                     <!--2019-05-06 08:22:40 +0000-->
                                 </date>
                             </datePicker>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name Your Timer" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uLG-Dh-2AQ">
-                                <rect key="frame" x="25" y="78" width="364" height="30"/>
+                                <rect key="frame" x="20" y="20" width="374" height="30"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of rounds" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6HJ-8E-S5u">
-                                <rect key="frame" x="25" y="128" width="364" height="30"/>
+                                <rect key="frame" x="20" y="70" width="374" height="30"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Interval" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Hy-sY-K4X">
-                                <rect key="frame" x="0.0" y="10" width="414" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZh-hu-SIo">
-                                <rect key="frame" x="180" y="403" width="54" height="42"/>
+                                <rect key="frame" x="181.5" y="345" width="51" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="ADD"/>
                                 <connections>
                                     <action selector="savebutton:" destination="kEF-tg-7B7" eventType="touchUpInside" id="dE3-bl-CSo"/>
                                 </connections>
@@ -164,25 +153,22 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6HJ-8E-S5u" firstAttribute="leading" secondItem="5JJ-ty-eXU" secondAttribute="leading" constant="25" id="386-uM-TyZ"/>
-                            <constraint firstItem="8Hy-sY-K4X" firstAttribute="leading" secondItem="5JJ-ty-eXU" secondAttribute="leading" id="8si-qa-9jE"/>
+                            <constraint firstItem="6HJ-8E-S5u" firstAttribute="leading" secondItem="5JJ-ty-eXU" secondAttribute="leading" constant="20" id="386-uM-TyZ"/>
                             <constraint firstItem="6HJ-8E-S5u" firstAttribute="top" secondItem="uLG-Dh-2AQ" secondAttribute="bottom" constant="20" id="9h4-6n-7C1"/>
                             <constraint firstItem="AZh-hu-SIo" firstAttribute="firstBaseline" secondItem="bKb-Jr-4p5" secondAttribute="baseline" constant="34" symbolType="layoutAnchor" id="DGP-fB-RLs"/>
-                            <constraint firstItem="5JJ-ty-eXU" firstAttribute="trailing" secondItem="uLG-Dh-2AQ" secondAttribute="trailing" constant="25" id="FN3-3n-ugY"/>
-                            <constraint firstItem="uLG-Dh-2AQ" firstAttribute="top" secondItem="8Hy-sY-K4X" secondAttribute="bottom" constant="20" id="GDi-ii-nSQ"/>
+                            <constraint firstItem="5JJ-ty-eXU" firstAttribute="trailing" secondItem="uLG-Dh-2AQ" secondAttribute="trailing" constant="20" id="FN3-3n-ugY"/>
                             <constraint firstItem="bKb-Jr-4p5" firstAttribute="leading" secondItem="5JJ-ty-eXU" secondAttribute="leading" id="McT-zN-zCW"/>
-                            <constraint firstItem="8Hy-sY-K4X" firstAttribute="top" secondItem="5JJ-ty-eXU" secondAttribute="top" constant="10" id="Qpl-Zh-wLg"/>
-                            <constraint firstItem="5JJ-ty-eXU" firstAttribute="trailing" secondItem="8Hy-sY-K4X" secondAttribute="trailing" id="UBY-d2-12f"/>
-                            <constraint firstItem="5JJ-ty-eXU" firstAttribute="trailing" secondItem="6HJ-8E-S5u" secondAttribute="trailing" constant="25" id="XfR-9f-8f0"/>
-                            <constraint firstItem="uLG-Dh-2AQ" firstAttribute="leading" secondItem="5JJ-ty-eXU" secondAttribute="leading" constant="25" id="cfR-JL-D7x"/>
+                            <constraint firstItem="5JJ-ty-eXU" firstAttribute="trailing" secondItem="6HJ-8E-S5u" secondAttribute="trailing" constant="20" id="XfR-9f-8f0"/>
+                            <constraint firstItem="uLG-Dh-2AQ" firstAttribute="leading" secondItem="5JJ-ty-eXU" secondAttribute="leading" constant="20" id="cfR-JL-D7x"/>
                             <constraint firstAttribute="trailing" secondItem="bKb-Jr-4p5" secondAttribute="trailing" id="jXI-xD-rNM"/>
                             <constraint firstItem="bKb-Jr-4p5" firstAttribute="top" secondItem="6HJ-8E-S5u" secondAttribute="bottom" constant="25" id="p8n-p8-i77"/>
                             <constraint firstItem="AZh-hu-SIo" firstAttribute="centerX" secondItem="AtF-Bb-JPm" secondAttribute="centerX" id="qtZ-eq-63N"/>
+                            <constraint firstItem="uLG-Dh-2AQ" firstAttribute="top" secondItem="5JJ-ty-eXU" secondAttribute="top" constant="20" id="tvJ-wY-3AR"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5JJ-ty-eXU"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Interval" image="timer" id="gP6-mr-QCu"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black" translucent="NO"/>
                     <connections>
                         <outlet property="countdown" destination="bKb-Jr-4p5" id="7Sx-WN-tPm"/>
                         <outlet property="rounds" destination="6HJ-8E-S5u" id="SEt-vq-svX"/>
@@ -193,30 +179,25 @@
             </objects>
             <point key="canvasLocation" x="2423" y="1069"/>
         </scene>
-        <!--Stopwatch-->
+        <!--Add Stopwatch-->
         <scene sceneID="LbY-sW-3Mq">
             <objects>
-                <viewController id="wqg-Sl-SFN" customClass="NewStopwatchVC" customModule="Adrenalab_Timer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add Stopwatch" id="wqg-Sl-SFN" customClass="NewStopwatchVC" customModule="Adrenalab_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M6g-yN-egb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stopwatch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lgi-MN-Rif">
-                                <rect key="frame" x="0.0" y="5" width="414" height="48"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name Your Timer" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6cH-bm-d0M">
-                                <rect key="frame" x="25" y="73" width="364" height="30"/>
+                                <rect key="frame" x="20" y="20" width="374" height="30"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUh-PE-Pt7">
-                                <rect key="frame" x="180" y="123" width="54" height="42"/>
+                                <rect key="frame" x="181.5" y="70" width="51" height="42"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Save"/>
+                                <state key="normal" title="ADD"/>
                                 <connections>
                                     <action selector="AddTapped:" destination="wqg-Sl-SFN" eventType="touchUpInside" id="GCQ-aD-Gi2"/>
                                 </connections>
@@ -224,18 +205,16 @@
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="YbO-Cd-4t1" firstAttribute="trailing" secondItem="6cH-bm-d0M" secondAttribute="trailing" constant="25" id="36Q-w8-MXl"/>
+                            <constraint firstItem="YbO-Cd-4t1" firstAttribute="trailing" secondItem="6cH-bm-d0M" secondAttribute="trailing" constant="20" id="36Q-w8-MXl"/>
+                            <constraint firstItem="6cH-bm-d0M" firstAttribute="top" secondItem="YbO-Cd-4t1" secondAttribute="top" constant="20" id="7T8-oi-yJh"/>
                             <constraint firstItem="ZUh-PE-Pt7" firstAttribute="top" secondItem="6cH-bm-d0M" secondAttribute="bottom" constant="20" id="K5i-FS-0g4"/>
-                            <constraint firstItem="YbO-Cd-4t1" firstAttribute="trailing" secondItem="Lgi-MN-Rif" secondAttribute="trailing" id="SW8-aj-nS7"/>
-                            <constraint firstItem="6cH-bm-d0M" firstAttribute="top" secondItem="Lgi-MN-Rif" secondAttribute="bottom" constant="20" id="lGf-iU-Tb0"/>
                             <constraint firstItem="ZUh-PE-Pt7" firstAttribute="centerX" secondItem="M6g-yN-egb" secondAttribute="centerX" id="oA3-5b-rgF"/>
-                            <constraint firstItem="Lgi-MN-Rif" firstAttribute="top" secondItem="YbO-Cd-4t1" secondAttribute="top" constant="5" id="qej-b9-sXW"/>
-                            <constraint firstItem="6cH-bm-d0M" firstAttribute="leading" secondItem="YbO-Cd-4t1" secondAttribute="leading" constant="25" id="rYV-42-gDD"/>
-                            <constraint firstItem="Lgi-MN-Rif" firstAttribute="leading" secondItem="YbO-Cd-4t1" secondAttribute="leading" id="x05-MS-rF2"/>
+                            <constraint firstItem="6cH-bm-d0M" firstAttribute="leading" secondItem="YbO-Cd-4t1" secondAttribute="leading" constant="20" id="rYV-42-gDD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YbO-Cd-4t1"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Stopwatch" image="stopwatch" id="fHT-gt-8dM"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="TimerNameLabel" destination="6cH-bm-d0M" id="RjZ-sJ-JuG"/>
                     </connections>
@@ -244,10 +223,10 @@
             </objects>
             <point key="canvasLocation" x="1087" y="1070"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Add-->
         <scene sceneID="K1y-lA-Heg">
             <objects>
-                <tabBarController id="hsw-Z6-6kR" sceneMemberID="viewController">
+                <tabBarController title="Add" id="hsw-Z6-6kR" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Cf7-lb-S8d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -343,13 +322,16 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Qey-P6-KgF">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="w7q-Ga-AcP" kind="relationship" relationship="rootViewController" id="KGm-tl-Hba"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EN7-Ua-F2c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="102.89855072463769" y="130.58035714285714"/>
+            <point key="canvasLocation" x="165" y="19"/>
         </scene>
     </scenes>
     <resources>

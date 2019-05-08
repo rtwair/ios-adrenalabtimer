@@ -16,6 +16,8 @@ class ViewController: UITableViewController {
     let COUNTDOWN = Int(Timermodel.wodtypes.countdown.rawValue)
     let INTERVAL = Int(Timermodel.wodtypes.interval.rawValue)
 
+    let sectionImages: [UIImage] = [#imageLiteral(resourceName: "timer"),#imageLiteral(resourceName: "hourglass"),#imageLiteral(resourceName: "stopwatch")]
+    
     override func viewDidAppear(_ animated: Bool) {
         fetchUserTimers()
     }
@@ -44,6 +46,9 @@ class ViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         cell.textLabel?.text = timers[indexPath.section][indexPath.row].name
+        cell.backgroundColor = .clear
+        cell.textLabel?.textColor = .black
+        
         return cell
     }
     
@@ -67,6 +72,42 @@ class ViewController: UITableViewController {
         fetchUserTimers()
     }
     
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var titleOfSection = ""
+        switch section {
+        case Int(Timermodel.wodtypes.stopwatch.rawValue):
+            titleOfSection = "Stopwatch"
+        case Int(Timermodel.wodtypes.countdown.rawValue):
+            titleOfSection = "Countdown"
+        case Int(Timermodel.wodtypes.interval.rawValue):
+            titleOfSection = "Interval"
+        default:
+            titleOfSection = "\(section)"
+        }
+        titleOfSection += " timers"
+        let view = UIView()
+
+        let label = UILabel()
+        label.text = titleOfSection
+        label.frame = CGRect(x: 45, y: 5, width: 150, height: 35)
+        label.font =  UIFont.boldSystemFont(ofSize: 17)
+        view.addSubview(label)
+
+        view.backgroundColor = UIColor.gray
+        let image = UIImageView(image: sectionImages[section])
+        image.frame = CGRect(x: 5, y: 5, width: 35, height: 35)
+        view.addSubview(image)
+        
+        
+        
+        return view
+        //let image = UIImage(St: sectionImages[titleOfSection])
+
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat(integerLiteral: 45)
+    }
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         switch section {
         case Int(Timermodel.wodtypes.stopwatch.rawValue):

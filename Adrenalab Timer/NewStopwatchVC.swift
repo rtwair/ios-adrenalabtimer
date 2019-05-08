@@ -11,8 +11,16 @@ import UIKit
 class NewStopwatchVC: UIViewController {
     @IBOutlet weak var TimerNameLabel: UITextField!
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        parent?.title = "Add Stopwatch"
+    }
     override func viewDidLoad() {
+        
         super.viewDidLoad()
+        
+        
+        
 
     }
     
