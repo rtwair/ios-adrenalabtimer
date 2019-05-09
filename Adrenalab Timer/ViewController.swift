@@ -8,7 +8,11 @@
 
 import UIKit
 
-
+class listingCell: UITableViewCell {
+    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+}
 class ViewController: UITableViewController {
 
     var timers: [[Wodtimer]] = [[],[],[]]
@@ -44,7 +48,9 @@ class ViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        //let cell = listingCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "listingCell", for: indexPath) as! listingCell
+        
         var info = ""
         let valueNum =  Int32(timers[indexPath.section][indexPath.row].timervalue)
         let valueAsStr = Timermodel.secondsToTimer(totalseconds: valueNum)
@@ -53,17 +59,17 @@ class ViewController: UITableViewController {
             return cell
         }
         if (indexPath.section == STOPWATCH) {
-            info = ""
+            info = "stopwatch"
         } else if (indexPath.section == COUNTDOWN) {
-            info = "- \(valueAsStr)"
+            info = "\(valueAsStr)"
         } else if (indexPath.section == INTERVAL) {
-            info = "- \(timers[indexPath.section][indexPath.row].numintervals) rounds of \(valueAsStr)"
+            info = "\(timers[indexPath.section][indexPath.row].numintervals) rounds of\(valueAsStr)"
         }
 
-        
-        cell.textLabel?.text = "\(name)    \(info)"
+        cell.infoLabel?.text = "\(info)"
+        cell.titleLabel?.text = "\(name) \n\(info)"
         cell.backgroundColor = .clear
-        cell.textLabel?.textColor = .black
+        cell.titleLabel?.textColor = .black
         
         return cell
     }
