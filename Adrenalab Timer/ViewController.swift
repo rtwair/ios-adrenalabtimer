@@ -111,8 +111,8 @@ class ViewController: UITableViewController {
 
         let label = UILabel()
         label.text = titleOfSection
-        label.frame = CGRect(x: 45, y: 5, width: 150, height: 35)
-        label.font =  UIFont.boldSystemFont(ofSize: 17)
+        label.frame = CGRect(x: 45, y: 5, width: 200, height: 35)
+        label.font =  UIFont.boldSystemFont(ofSize: 19)
         view.addSubview(label)
 
         view.backgroundColor = UIColor.gray
