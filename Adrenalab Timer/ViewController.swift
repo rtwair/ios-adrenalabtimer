@@ -45,7 +45,23 @@ class ViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = timers[indexPath.section][indexPath.row].name
+        var info = ""
+        let valueNum =  Int32(timers[indexPath.section][indexPath.row].timervalue)
+        let valueAsStr = Timermodel.secondsToTimer(totalseconds: valueNum)
+        
+        guard let name = timers[indexPath.section][indexPath.row].name else {
+            return cell
+        }
+        if (indexPath.section == STOPWATCH) {
+            info = ""
+        } else if (indexPath.section == COUNTDOWN) {
+            info = "- \(valueAsStr)"
+        } else if (indexPath.section == INTERVAL) {
+            info = "- \(timers[indexPath.section][indexPath.row].numintervals) rounds of \(valueAsStr)"
+        }
+
+        
+        cell.textLabel?.text = "\(name)    \(info)"
         cell.backgroundColor = .clear
         cell.textLabel?.textColor = .black
         
