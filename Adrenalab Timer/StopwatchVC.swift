@@ -34,7 +34,7 @@ class StopwatchVC: UIViewController {
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
         } catch {
-            print("error")
+            print("Error: audio file missing?")
         }
     }
     

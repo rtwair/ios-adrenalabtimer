@@ -102,32 +102,30 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cj1-zn-tDo">
-                                <rect key="frame" x="20" y="70" width="374" height="216"/>
-                                <date key="date" timeIntervalSinceReferenceDate="578823433.65937102">
-                                    <!--2019-05-06 08:17:13 +0000-->
-                                </date>
-                            </datePicker>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0T-1W-Dyk">
+                                <rect key="frame" x="0.0" y="64" width="414" height="216"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cj1-zn-tDo" firstAttribute="leading" secondItem="iM5-Eg-uey" secondAttribute="leading" constant="20" id="3ju-ji-pgG"/>
+                            <constraint firstItem="k0T-1W-Dyk" firstAttribute="leading" secondItem="iM5-Eg-uey" secondAttribute="leading" id="5Fb-3Z-tUe"/>
                             <constraint firstItem="T5d-N7-TOs" firstAttribute="centerX" secondItem="3sd-ha-ghE" secondAttribute="centerX" id="HEG-Xi-8Dx"/>
                             <constraint firstItem="iM5-Eg-uey" firstAttribute="trailing" secondItem="3CR-uD-DCb" secondAttribute="trailing" constant="20" id="OPY-63-c9Z"/>
                             <constraint firstItem="3CR-uD-DCb" firstAttribute="leading" secondItem="iM5-Eg-uey" secondAttribute="leading" constant="20" id="ZFl-X9-c0z"/>
-                            <constraint firstItem="cj1-zn-tDo" firstAttribute="centerX" secondItem="3sd-ha-ghE" secondAttribute="centerX" id="duu-kr-1Id"/>
                             <constraint firstItem="3CR-uD-DCb" firstAttribute="top" secondItem="iM5-Eg-uey" secondAttribute="top" constant="20" id="g2H-WD-zrp"/>
                             <constraint firstItem="3CR-uD-DCb" firstAttribute="centerX" secondItem="3sd-ha-ghE" secondAttribute="centerX" id="gBY-9s-WBn"/>
-                            <constraint firstItem="iM5-Eg-uey" firstAttribute="trailing" secondItem="cj1-zn-tDo" secondAttribute="trailing" constant="20" id="mLo-OE-M3A"/>
-                            <constraint firstItem="cj1-zn-tDo" firstAttribute="top" secondItem="3CR-uD-DCb" secondAttribute="bottom" constant="20" id="qwr-Jt-0cq"/>
-                            <constraint firstItem="T5d-N7-TOs" firstAttribute="top" secondItem="cj1-zn-tDo" secondAttribute="bottom" constant="20" id="xjs-be-kA9"/>
+                            <constraint firstItem="T5d-N7-TOs" firstAttribute="top" secondItem="k0T-1W-Dyk" secondAttribute="bottom" constant="26" id="nVy-fU-vvY"/>
+                            <constraint firstItem="k0T-1W-Dyk" firstAttribute="trailing" secondItem="iM5-Eg-uey" secondAttribute="trailing" id="qaM-JA-OvB"/>
+                            <constraint firstItem="k0T-1W-Dyk" firstAttribute="top" secondItem="3CR-uD-DCb" secondAttribute="bottom" constant="14" id="rud-YT-Nc1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iM5-Eg-uey"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Countdown" image="hourglass" largeContentSizeImage="close" id="kvY-6V-3hc"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <connections>
-                        <outlet property="countdown" destination="cj1-zn-tDo" id="zcZ-zU-BZ1"/>
+                        <outlet property="picker" destination="k0T-1W-Dyk" id="HtN-Hq-PhG"/>
                         <outlet property="timernamelabel" destination="3CR-uD-DCb" id="JtN-5p-3u6"/>
                     </connections>
                 </viewController>
