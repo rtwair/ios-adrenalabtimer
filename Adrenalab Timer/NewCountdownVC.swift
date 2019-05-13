@@ -28,11 +28,13 @@ class NewCountdownVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let seconds = Array(0...59)
         pickerData = [hours,minutes,seconds]
 
+
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        picker.setValue(UIColor.white, forKeyPath: "textColor")
+        //picker.setValue(UIColor.white, forKeyPath: "textColor")
+        
         // Do any additional setup after loading the view.
     }
     // Number of columns of data
@@ -47,7 +49,17 @@ class NewCountdownVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     // The data to return fopr the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-    return String(pickerData[component][row])
+        switch component {
+        case 0:
+            return "\(pickerData[component][row]) Hour"
+        case 1:
+            return "\(pickerData[component][row]) Mins"
+        case 2:
+            return "\(pickerData[component][row]) Second"
+        default:
+           return String(pickerData[component][row])
+        }
+    //return String(pickerData[component][row])
     }
 
 
