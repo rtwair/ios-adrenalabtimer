@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class StopwatchVC: UIViewController {
 
@@ -19,15 +20,22 @@ class StopwatchVC: UIViewController {
     var countingTimer: Timer?
     var timerRunning: Bool = false
     var countdownTime: Int = 3
-    
+    var audioPlayer = AVAudioPlayer()
     
     @IBOutlet weak var resetBtnO: UIButton!
     @IBOutlet weak var TimerLabel: UILabel!
     @IBOutlet weak var RoundNumber: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         AppDelegate.AppUtility.lockOrientation(UIInterfaceOrientationMask.landscapeRight, andRotateTo: UIInterfaceOrientation.landscapeRight)
         resetView()
+        let sound = Bundle.main.path(forResource: "1000", ofType: "wav")
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: sound!))
+        } catch {
+            print("error")
+        }
     }
     func resetView() {
         RoundNumber.isHidden = true
@@ -56,7 +64,6 @@ class StopwatchVC: UIViewController {
                 return
             }
             currTimerValue = timervalue
-            print("currtimevalue is = \(currTimerValue)")
             totalRounds = Int(numrounds)
             RoundNumber.isHidden = false
             TimerLabel.text = Timermodel.secondsToTimer(totalseconds: currTimerValue)
@@ -77,6 +84,8 @@ class StopwatchVC: UIViewController {
     @objc func stopwatchTimer() {
         
         if countdownTime == -1 {
+            audioPlayer.stop()
+
             currTimerValue += 1
             TimerLabel.text = Timermodel.secondsToTimer(totalseconds: currTimerValue)
 
@@ -85,6 +94,7 @@ class StopwatchVC: UIViewController {
                 TimerLabel.text = "\(countdownTime)"
             } else {
                 TimerLabel.text = "GO!"
+                audioPlayer.play()
             }
             countdownTime -= 1
 
@@ -93,10 +103,13 @@ class StopwatchVC: UIViewController {
     
     @objc func countdownTimer() {
         if countdownTime == -1 {
+            audioPlayer.stop()
+
             if currTimerValue > 0 {
                 currTimerValue -= 1
                 TimerLabel.text = Timermodel.secondsToTimer(totalseconds: currTimerValue)
             } else {
+                audioPlayer.play()
                 countingTimer?.invalidate()
                 timerRunning = false
                 resetBtnO.isHidden = timerRunning
@@ -107,6 +120,8 @@ class StopwatchVC: UIViewController {
                 TimerLabel.text = "\(countdownTime)"
             } else {
                 TimerLabel.text = "GO!"
+                audioPlayer.play()
+
             }
             countdownTime -= 1
 
@@ -115,12 +130,15 @@ class StopwatchVC: UIViewController {
     
     @objc func intervalTimer() {
         if countdownTime == -1 {
+            audioPlayer.stop()
+
             if (currRound <= totalRounds) {
                 if currTimerValue > 0 {
                     currTimerValue -= 1
                     TimerLabel.text = Timermodel.secondsToTimer(totalseconds: currTimerValue)
                 } else {
                     currRound += 1
+                    audioPlayer.play()
                     if currRound > totalRounds {
                         currRound = totalRounds
                         timerComplete = true
@@ -139,6 +157,8 @@ class StopwatchVC: UIViewController {
                 TimerLabel.text = "\(countdownTime)"
             } else {
                 TimerLabel.text = "GO!"
+                audioPlayer.play()
+
             }
             countdownTime -= 1
         }

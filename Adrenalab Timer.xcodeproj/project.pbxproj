@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		890FC328228943860040BB4C /* ToneOutputUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 890FC327228943860040BB4C /* ToneOutputUnit.swift */; };
+		890FC32B228954870040BB4C /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 890FC32A228954870040BB4C /* AVFoundation.framework */; };
+		890FC32D228956AD0040BB4C /* 1000.wav in Resources */ = {isa = PBXBuildFile; fileRef = 890FC32C228956AD0040BB4C /* 1000.wav */; };
 		895908D4227F211900F72B58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895908D3227F211900F72B58 /* AppDelegate.swift */; };
 		895908D6227F211900F72B58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895908D5227F211900F72B58 /* ViewController.swift */; };
 		895908D9227F211A00F72B58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 895908D7227F211A00F72B58 /* Main.storyboard */; };
@@ -21,6 +24,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		890FC327228943860040BB4C /* ToneOutputUnit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToneOutputUnit.swift; sourceTree = "<group>"; };
+		890FC32A228954870040BB4C /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		890FC32C228956AD0040BB4C /* 1000.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = 1000.wav; sourceTree = "<group>"; };
 		895908D0227F211900F72B58 /* Adrenalab Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Adrenalab Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		895908D3227F211900F72B58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		895908D5227F211900F72B58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,17 +47,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				890FC32B228954870040BB4C /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		890FC329228954870040BB4C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				890FC32A228954870040BB4C /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		895908C7227F211900F72B58 = {
 			isa = PBXGroup;
 			children = (
 				895908D2227F211900F72B58 /* Adrenalab Timer */,
 				895908D1227F211900F72B58 /* Products */,
+				890FC329228954870040BB4C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,7 +91,9 @@
 				897188E922802D4E0074792C /* NewCountdownVC.swift */,
 				897188EB22802D630074792C /* NewIntervalVC.swift */,
 				895908DD227F211C00F72B58 /* Assets.xcassets */,
+				890FC327228943860040BB4C /* ToneOutputUnit.swift */,
 				895908DF227F211C00F72B58 /* LaunchScreen.storyboard */,
+				890FC32C228956AD0040BB4C /* 1000.wav */,
 				895908E2227F211C00F72B58 /* Info.plist */,
 				895908DA227F211A00F72B58 /* Adrenalab_Timer.xcdatamodeld */,
 			);
@@ -141,6 +159,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				895908E1227F211C00F72B58 /* LaunchScreen.storyboard in Resources */,
+				890FC32D228956AD0040BB4C /* 1000.wav in Resources */,
 				895908DE227F211C00F72B58 /* Assets.xcassets in Resources */,
 				895908D9227F211A00F72B58 /* Main.storyboard in Resources */,
 			);
@@ -153,6 +172,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				890FC328228943860040BB4C /* ToneOutputUnit.swift in Sources */,
 				897188EC22802D630074792C /* NewIntervalVC.swift in Sources */,
 				895908DC227F211A00F72B58 /* Adrenalab_Timer.xcdatamodeld in Sources */,
 				897188F0228040A00074792C /* StopwatchVC.swift in Sources */,
