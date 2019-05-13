@@ -82,7 +82,6 @@ class ViewController: UITableViewController {
         if editingStyle == .delete {
             if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
                 let objToDelete = timers[indexPath.section][indexPath.row]
-                
                 context.delete(objToDelete)
                 do {
                     try context.save()

@@ -18,6 +18,8 @@ class StopwatchVC: UIViewController {
     
     var countingTimer: Timer?
     var timerRunning: Bool = false
+    var countdownTime: Int = 3
+    
     
     @IBOutlet weak var resetBtnO: UIButton!
     @IBOutlet weak var TimerLabel: UILabel!
@@ -73,47 +75,82 @@ class StopwatchVC: UIViewController {
     }
 
     @objc func stopwatchTimer() {
-        currTimerValue += 1
-        TimerLabel.text = Timermodel.secondsToTimer(totalseconds: currTimerValue)
-    }
-    
-    @objc func countdownTimer() {
-        if currTimerValue > 0 {
-            currTimerValue -= 1
+        
+        if countdownTime == -1 {
+            currTimerValue += 1
             TimerLabel.text = Timermodel.secondsToTimer(totalseconds: currTimerValue)
+
         } else {
-            countingTimer?.invalidate()
-            timerRunning = false
-            resetBtnO.isHidden = timerRunning
+            if countdownTime != 0 {
+                TimerLabel.text = "\(countdownTime)"
+            } else {
+                TimerLabel.text = "GO!"
+            }
+            countdownTime -= 1
+
         }
     }
     
-    @objc func intervalTimer() {
-        if (currRound <= totalRounds) {
+    @objc func countdownTimer() {
+        if countdownTime == -1 {
             if currTimerValue > 0 {
                 currTimerValue -= 1
                 TimerLabel.text = Timermodel.secondsToTimer(totalseconds: currTimerValue)
             } else {
-                currRound += 1
-                if currRound > totalRounds {
-                    currRound = totalRounds
-                    timerComplete = true
-                    countingTimer?.invalidate()
-                    timerRunning = false
-                    resetBtnO.isHidden = timerRunning
-                    playPauseBtn.setImage(UIImage(named: "play.png"), for: UIControl.State.normal)
-
-                } else {
-                    resetView()
-                }
+                countingTimer?.invalidate()
+                timerRunning = false
+                resetBtnO.isHidden = timerRunning
             }
+
+        } else {
+            if countdownTime != 0 {
+                TimerLabel.text = "\(countdownTime)"
+            } else {
+                TimerLabel.text = "GO!"
+            }
+            countdownTime -= 1
+
         }
     }
     
-    @IBAction func ResetButton(_ sender: Any) {
-        if !timerRunning {
-            resetView()
+    @objc func intervalTimer() {
+        if countdownTime == -1 {
+            if (currRound <= totalRounds) {
+                if currTimerValue > 0 {
+                    currTimerValue -= 1
+                    TimerLabel.text = Timermodel.secondsToTimer(totalseconds: currTimerValue)
+                } else {
+                    currRound += 1
+                    if currRound > totalRounds {
+                        currRound = totalRounds
+                        timerComplete = true
+                        countingTimer?.invalidate()
+                        timerRunning = false
+                        resetBtnO.isHidden = timerRunning
+                        playPauseBtn.setImage(UIImage(named: "play.png"), for: UIControl.State.normal)
+                        
+                    } else {
+                        resetView()
+                    }
+                }
+            }
+        } else {
+            if countdownTime != 0 {
+                TimerLabel.text = "\(countdownTime)"
+            } else {
+                TimerLabel.text = "GO!"
+            }
+            countdownTime -= 1
         }
+
+    }
+    
+    @IBAction func ResetButton(_ sender: Any) {
+        //if !timerRunning {
+        currRound = 1
+        resetView()
+        countdownTime = 3
+        //}
     }
     
     @IBOutlet weak var playPauseBtn: UIButton!
