@@ -55,7 +55,7 @@ class NewCountdownVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         case 1:
             return "\(pickerData[component][row]) Mins"
         case 2:
-            return "\(pickerData[component][row]) Second"
+            return "\(pickerData[component][row]) Secs"
         default:
            return String(pickerData[component][row])
         }

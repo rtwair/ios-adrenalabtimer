@@ -8,16 +8,29 @@
 
 import UIKit
 
-class NewIntervalVC: UIViewController {
+class NewIntervalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var timername: UITextField!
     @IBOutlet weak var rounds: UITextField!
     @IBOutlet weak var countdown: UIDatePicker!
     
-    
+    @IBOutlet weak var picker: UIPickerView!
+    var pickerData: [[Int]] = [[Int]]()
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         parent?.title = "Add Interval Timer"
+        
+        // Connect data:
+        self.picker.delegate = self
+        self.picker.dataSource = self
+        
+        // Input the data into the array
+        let hours = Array(0...9)
+        let minutes = Array(0...59)
+        let seconds = Array(0...59)
+        pickerData = [hours,minutes,seconds]
+
     }
 
     override func viewDidLoad() {
@@ -25,9 +38,35 @@ class NewIntervalVC: UIViewController {
         countdown.setValue(UIColor.white, forKeyPath: "textColor")
 
     }
+    // Number of columns of data
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 3
+    }
+    
+    // The number of rows of data
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickerData[component].count
+    }
+    
+    // The data to return fopr the row and component (column) that's being passed in
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch component {
+        case 0:
+            return "\(pickerData[component][row]) Hour"
+        case 1:
+            return "\(pickerData[component][row]) Mins"
+        case 2:
+            return "\(pickerData[component][row]) Secs"
+        default:
+            return String(pickerData[component][row])
+        }
+        //return String(pickerData[component][row])
+    }
 
     @IBAction func savebutton(_ sender: Any) {
         let type: Int32 = Timermodel.wodtypes.interval.rawValue
+        let totalTimeSelected = picker.selectedRow(inComponent: 0) * 3600 + picker.selectedRow(inComponent: 1) * 60 + picker.selectedRow(inComponent: 2)
+
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             let currtimer = Wodtimer(context: context)
             
@@ -45,7 +84,7 @@ class NewIntervalVC: UIViewController {
                 return
             }
             currtimer.numintervals = numintervalsnum
-            currtimer.timervalue = Int32(countdown.countDownDuration)
+            currtimer.timervalue = Int32(totalTimeSelected)
             print("timervalue while creating is \(currtimer.timervalue)")
             currtimer.type = type
             //saving
