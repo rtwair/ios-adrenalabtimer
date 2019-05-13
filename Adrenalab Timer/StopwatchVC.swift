@@ -37,6 +37,11 @@ class StopwatchVC: UIViewController {
             print("error")
         }
     }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        countingTimer?.invalidate()
+        audioPlayer.stop()
+    }
     func resetView() {
         RoundNumber.isHidden = true
         guard let timertype = timer?.type else {
