@@ -12,11 +12,12 @@ class NewIntervalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
 
     @IBOutlet weak var timername: UITextField!
     @IBOutlet weak var rounds: UITextField!
-    @IBOutlet weak var countdown: UIDatePicker!
     
     @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var roundPicker: UIPickerView!
+    
     var pickerData: [[Int]] = [[Int]]()
-
+    var totalRounds: [Int] = [Int]()
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         parent?.title = "Add Interval Timer"
@@ -25,6 +26,7 @@ class NewIntervalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         self.picker.delegate = self
         self.picker.dataSource = self
         
+        totalRounds = Array(0...100)
         // Input the data into the array
         let hours = Array(0...9)
         let minutes = Array(0...59)
@@ -35,32 +37,46 @@ class NewIntervalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        countdown.setValue(UIColor.white, forKeyPath: "textColor")
-
     }
+    
     // Number of columns of data
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 3
+        if pickerView.tag == 0 {
+            return 3
+
+        } else {
+            return 1
+        }
     }
     
     // The number of rows of data
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return pickerData[component].count
+        if pickerView.tag == 0 {
+            return pickerData[component].count
+
+        } else {
+            return totalRounds.count
+        }
     }
     
     // The data to return fopr the row and component (column) that's being passed in
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        switch component {
-        case 0:
-            return "\(pickerData[component][row]) Hour"
-        case 1:
-            return "\(pickerData[component][row]) Mins"
-        case 2:
-            return "\(pickerData[component][row]) Secs"
-        default:
-            return String(pickerData[component][row])
+        if pickerView.tag == 0 {
+            switch component {
+            case 0:
+                return "\(pickerData[component][row]) Hour"
+            case 1:
+                return "\(pickerData[component][row]) Mins"
+            case 2:
+                return "\(pickerData[component][row]) Secs"
+            default:
+                return String(pickerData[component][row])
+            }
+            //return String(pickerData[component][row])
+
+        } else {
+            return "\(totalRounds[component]) rounds"
         }
-        //return String(pickerData[component][row])
     }
 
     @IBAction func savebutton(_ sender: Any) {
