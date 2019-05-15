@@ -26,6 +26,9 @@ class NewIntervalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         self.picker.delegate = self
         self.picker.dataSource = self
         
+        self.roundPicker.delegate = self
+        self.roundPicker.dataSource = self
+        
         totalRounds = Array(0...100)
         // Input the data into the array
         let hours = Array(0...9)
@@ -75,7 +78,7 @@ class NewIntervalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             //return String(pickerData[component][row])
 
         } else {
-            return "\(totalRounds[component]) rounds"
+            return "\(totalRounds[row]) rounds"
         }
     }
 
