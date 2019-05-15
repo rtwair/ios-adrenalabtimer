@@ -147,42 +147,34 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert" smartInsertDeleteType="no" smartQuotesType="no" textContentType="name"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Number of rounds" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6HJ-8E-S5u">
-                                <rect key="frame" x="20" y="70" width="374" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZh-hu-SIo">
-                                <rect key="frame" x="187" y="343.5" width="40" height="34"/>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qLL-hn-dRO">
+                                <rect key="frame" x="-6" y="179" width="414" height="189"/>
+                            </pickerView>
+                            <pickerView tag="1" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Htq-x0-VEH">
+                                <rect key="frame" x="30" y="58" width="354" height="98"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZh-hu-SIo">
+                                <rect key="frame" x="187" y="376" width="40" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Save"/>
                                 <connections>
                                     <action selector="savebutton:" destination="kEF-tg-7B7" eventType="touchUpInside" id="dE3-bl-CSo"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qLL-hn-dRO">
-                                <rect key="frame" x="0.0" y="125" width="414" height="216"/>
-                            </pickerView>
-                            <pickerView tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Htq-x0-VEH">
-                                <rect key="frame" x="30" y="379" width="354" height="216"/>
-                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="AZh-hu-SIo" firstAttribute="top" secondItem="qLL-hn-dRO" secondAttribute="bottom" constant="2.5" id="2lL-QU-WaB"/>
-                            <constraint firstItem="6HJ-8E-S5u" firstAttribute="leading" secondItem="5JJ-ty-eXU" secondAttribute="leading" constant="20" id="386-uM-TyZ"/>
-                            <constraint firstItem="Htq-x0-VEH" firstAttribute="top" secondItem="AZh-hu-SIo" secondAttribute="bottom" constant="1.5" id="4DL-BC-fsb"/>
                             <constraint firstItem="5JJ-ty-eXU" firstAttribute="trailing" secondItem="Htq-x0-VEH" secondAttribute="trailing" constant="30" id="6ms-Xf-UHB"/>
-                            <constraint firstItem="6HJ-8E-S5u" firstAttribute="top" secondItem="uLG-Dh-2AQ" secondAttribute="bottom" constant="20" id="9h4-6n-7C1"/>
                             <constraint firstItem="5JJ-ty-eXU" firstAttribute="trailing" secondItem="uLG-Dh-2AQ" secondAttribute="trailing" constant="20" id="FN3-3n-ugY"/>
+                            <constraint firstItem="Htq-x0-VEH" firstAttribute="top" secondItem="uLG-Dh-2AQ" secondAttribute="bottom" constant="8" id="MNz-BV-adm"/>
                             <constraint firstItem="Htq-x0-VEH" firstAttribute="leading" secondItem="5JJ-ty-eXU" secondAttribute="leading" constant="30" id="Wmg-E2-gP0"/>
-                            <constraint firstItem="5JJ-ty-eXU" firstAttribute="trailing" secondItem="6HJ-8E-S5u" secondAttribute="trailing" constant="20" id="XfR-9f-8f0"/>
                             <constraint firstItem="uLG-Dh-2AQ" firstAttribute="leading" secondItem="5JJ-ty-eXU" secondAttribute="leading" constant="20" id="cfR-JL-D7x"/>
                             <constraint firstItem="qLL-hn-dRO" firstAttribute="leading" secondItem="5JJ-ty-eXU" secondAttribute="leading" id="lpT-0b-R8F"/>
+                            <constraint firstItem="qLL-hn-dRO" firstAttribute="top" secondItem="Htq-x0-VEH" secondAttribute="bottom" constant="23" id="om7-rS-PoP"/>
                             <constraint firstItem="AZh-hu-SIo" firstAttribute="centerX" secondItem="AtF-Bb-JPm" secondAttribute="centerX" id="qtZ-eq-63N"/>
                             <constraint firstItem="uLG-Dh-2AQ" firstAttribute="top" secondItem="5JJ-ty-eXU" secondAttribute="top" constant="20" id="tvJ-wY-3AR"/>
-                            <constraint firstItem="qLL-hn-dRO" firstAttribute="top" secondItem="6HJ-8E-S5u" secondAttribute="bottom" constant="25" id="vMh-N3-ovi"/>
+                            <constraint firstItem="AZh-hu-SIo" firstAttribute="top" secondItem="qLL-hn-dRO" secondAttribute="bottom" constant="8" id="vmg-jH-tky"/>
                             <constraint firstAttribute="trailing" secondItem="qLL-hn-dRO" secondAttribute="trailing" id="zwE-VH-epw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="5JJ-ty-eXU"/>
@@ -192,7 +184,6 @@
                     <connections>
                         <outlet property="picker" destination="qLL-hn-dRO" id="nFo-sW-70G"/>
                         <outlet property="roundPicker" destination="Htq-x0-VEH" id="QZb-oA-h1a"/>
-                        <outlet property="rounds" destination="6HJ-8E-S5u" id="SEt-vq-svX"/>
                         <outlet property="timername" destination="uLG-Dh-2AQ" id="Ltb-Nc-eJb"/>
                     </connections>
                 </viewController>

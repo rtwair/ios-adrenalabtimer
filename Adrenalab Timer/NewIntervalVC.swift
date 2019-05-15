@@ -11,7 +11,6 @@ import UIKit
 class NewIntervalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
     @IBOutlet weak var timername: UITextField!
-    @IBOutlet weak var rounds: UITextField!
     
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var roundPicker: UIPickerView!
@@ -94,14 +93,9 @@ class NewIntervalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             } else {
                 currtimer.name = "Interval"
             }
-            guard let numintervalstext = rounds.text else {
-                let alert = UIAlertController(title: "Enter Rounds", message: "Please enter number of rounds.", preferredStyle: .alert)
-                self.present(alert, animated: true)
-                return
-            }
-            guard let numintervalsnum = Int32(numintervalstext) else {
-                return
-            }
+            let numintervalsnum: Int32 = Int32(roundPicker.selectedRow(inComponent: 0))
+
+
             currtimer.numintervals = numintervalsnum
             currtimer.timervalue = Int32(totalTimeSelected)
             print("timervalue while creating is \(currtimer.timervalue)")
