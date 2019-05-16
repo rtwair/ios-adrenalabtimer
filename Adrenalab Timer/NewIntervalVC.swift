@@ -28,7 +28,7 @@ class NewIntervalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         self.roundPicker.delegate = self
         self.roundPicker.dataSource = self
         
-        totalRounds = Array(0...100)
+        totalRounds = Array(1...99)
         // Input the data into the array
         let hours = Array(0...9)
         let minutes = Array(0...59)
@@ -87,7 +87,12 @@ class NewIntervalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     @IBAction func savebutton(_ sender: Any) {
         let type: Int32 = Timermodel.wodtypes.interval.rawValue
         let totalTimeSelected = picker.selectedRow(inComponent: 0) * 3600 + picker.selectedRow(inComponent: 1) * 60 + picker.selectedRow(inComponent: 2)
-
+        if totalTimeSelected == 0 {
+            let alert = UIAlertController(title: "ERROR", message: "Interval countdown timer is currently set to 0.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert,animated: true)
+            return
+        }
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             let currtimer = Wodtimer(context: context)
             
@@ -99,7 +104,6 @@ class NewIntervalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             let numintervalsnum: Int32 = Int32(roundPicker.selectedRow(inComponent: 0))
             currtimer.numintervals = numintervalsnum
             currtimer.timervalue = Int32(totalTimeSelected)
-            print("timervalue while creating is \(currtimer.timervalue)")
             currtimer.type = type
             //saving
             do {
