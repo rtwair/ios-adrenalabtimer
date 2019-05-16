@@ -41,6 +41,9 @@ class NewIntervalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         super.viewDidLoad()
     }
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        timername.endEditing(true)
+    }
     // Number of columns of data
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         if pickerView.tag == 0 {
@@ -94,8 +97,6 @@ class NewIntervalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
                 currtimer.name = "Interval"
             }
             let numintervalsnum: Int32 = Int32(roundPicker.selectedRow(inComponent: 0))
-
-
             currtimer.numintervals = numintervalsnum
             currtimer.timervalue = Int32(totalTimeSelected)
             print("timervalue while creating is \(currtimer.timervalue)")
@@ -109,5 +110,4 @@ class NewIntervalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         }
         navigationController?.popViewController(animated: true)
     }
-    
 }
