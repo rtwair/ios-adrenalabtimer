@@ -13,6 +13,7 @@ class NewCountdownVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var timernamelabel: UITextField!
     @IBOutlet weak var countdown: UIDatePicker!
     @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var saveButton: UIButton!
     var pickerData: [[Int]] = [[Int]]()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -27,6 +28,9 @@ class NewCountdownVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let minutes = Array(0...59)
         let seconds = Array(0...59)
         pickerData = [hours,minutes,seconds]
+        
+        saveButton.layer.cornerRadius = 4
+
 
 
     }
@@ -66,6 +70,13 @@ class NewCountdownVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBAction func savebutton(_ sender: Any) {
         let type: Int32 = Timermodel.wodtypes.countdown.rawValue
         let totalTimeSelected = picker.selectedRow(inComponent: 0) * 3600 + picker.selectedRow(inComponent: 1) * 60 + picker.selectedRow(inComponent: 2)
+        if totalTimeSelected == 0 {
+            let alert = UIAlertController(title: "No Duration", message: "Please choose a countodwn timer duration.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+            self.present(alert,animated: true)
+            return
+        }
+
         if let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer.viewContext {
             let currtimer = Wodtimer(context: context)
             if timernamelabel.text != "" {
@@ -81,7 +92,7 @@ class NewCountdownVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             do {
                 try context.save()
             } catch {
-                print("Failed saving")
+                print("Failed to save context")
             }
         }
         navigationController?.popViewController(animated: true)

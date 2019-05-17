@@ -15,6 +15,7 @@ class NewIntervalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var roundPicker: UIPickerView!
     
+    @IBOutlet weak var saveButton: UIButton!
     var pickerData: [[Int]] = [[Int]]()
     var totalRounds: [Int] = [Int]()
     override func viewWillAppear(_ animated: Bool) {
@@ -34,6 +35,8 @@ class NewIntervalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         let minutes = Array(0...59)
         let seconds = Array(0...59)
         pickerData = [hours,minutes,seconds]
+
+        saveButton.layer.cornerRadius = 4
 
     }
 
@@ -88,7 +91,7 @@ class NewIntervalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
         let type: Int32 = Timermodel.wodtypes.interval.rawValue
         let totalTimeSelected = picker.selectedRow(inComponent: 0) * 3600 + picker.selectedRow(inComponent: 1) * 60 + picker.selectedRow(inComponent: 2)
         if totalTimeSelected == 0 {
-            let alert = UIAlertController(title: "ERROR", message: "Interval countdown timer is currently set to 0.", preferredStyle: .alert)
+            let alert = UIAlertController(title: "No Duration", message: "Please choose an interval round duration.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
             self.present(alert,animated: true)
             return
