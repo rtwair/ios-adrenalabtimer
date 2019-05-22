@@ -17,13 +17,9 @@ class NewStopwatchVC: UIViewController {
         parent?.title = "Add Stopwatch"
         save.layer.cornerRadius = 4
     }
+    
     override func viewDidLoad() {
-        
         super.viewDidLoad()
-        
-        
-        
-
     }
     
     @IBAction func AddTapped(_ sender: Any) {

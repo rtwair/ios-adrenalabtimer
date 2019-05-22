@@ -166,7 +166,6 @@ class ViewController: UITableViewController {
     }
 
     @IBAction func editButton(_ sender: Any) {
-
         setEditing(!isEditing, animated: true)
     }
 }
