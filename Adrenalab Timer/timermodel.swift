@@ -22,7 +22,7 @@ struct Timermodel {
         var seconds: Int32 = 0
         minutes = totalseconds / 60
         seconds = totalseconds % 60
-        let minsStr = String(format: "%2d", arguments: [minutes])
+        let minsStr = String(format: "%02d", arguments: [minutes])
         let secsStr = String(format: "%02d", arguments: [seconds])
         return minsStr+":"+secsStr
     }

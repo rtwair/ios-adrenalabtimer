@@ -68,25 +68,39 @@ class NewIntervalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
     }
     
     // The data to return fopr the row and component (column) that's being passed in
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         if pickerView.tag == 0 {
+            let pickerLabel = UILabel()
+            var titleData = ""
+            
             switch component {
             case 0:
-                return "\(pickerData[component][row]) Hour"
+                titleData = "\(pickerData[component][row]) Hour"
             case 1:
-                return "\(pickerData[component][row]) Mins"
+                titleData = "\(pickerData[component][row]) Mins"
             case 2:
-                return "\(pickerData[component][row]) Secs"
+                titleData = "\(pickerData[component][row]) Secs"
             default:
-                return String(pickerData[component][row])
+                titleData = String(pickerData[component][row])
             }
-            //return String(pickerData[component][row])
-
+            
+            
+            pickerLabel.text = titleData
+            pickerLabel.font = UIFont(name: "Avenir", size: 19.0)
+            pickerLabel.textAlignment = .center
+            
+            return pickerLabel
+            
         } else {
-            return "\(totalRounds[row]) rounds"
+            let pickerLabel = UILabel()
+            pickerLabel.text = "\(totalRounds[row]) rounds"
+            pickerLabel.font = UIFont(name: "Avenir", size: 19.0)
+            pickerLabel.textAlignment = .center
+            return pickerLabel
         }
-    }
 
+    }
     @IBAction func savebutton(_ sender: Any) {
         let type: Int32 = Timermodel.wodtypes.interval.rawValue
         let totalTimeSelected = picker.selectedRow(inComponent: 0) * 3600 + picker.selectedRow(inComponent: 1) * 60 + picker.selectedRow(inComponent: 2)
@@ -104,7 +118,7 @@ class NewIntervalVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSou
             } else {
                 currtimer.name = "Interval"
             }
-            let numintervalsnum: Int32 = Int32(roundPicker.selectedRow(inComponent: 0))
+            let numintervalsnum: Int32 = Int32(roundPicker.selectedRow(inComponent: 0)) + 1
             currtimer.numintervals = numintervalsnum
             currtimer.timervalue = Int32(totalTimeSelected)
             currtimer.type = type

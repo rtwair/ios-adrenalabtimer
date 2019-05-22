@@ -28,7 +28,6 @@ class NewCountdownVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let minutes = Array(0...59)
         let seconds = Array(0...59)
         pickerData = [hours,minutes,seconds]
-        
         saveButton.layer.cornerRadius = 4
 
 
@@ -51,8 +50,35 @@ class NewCountdownVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     return pickerData[component].count
     }
     
+    //formatting using a delegate?
+    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let pickerLabel = UILabel()
+        var titleData = ""
+        
+        switch component {
+        case 0:
+            titleData = "\(pickerData[component][row]) Hour"
+        case 1:
+            titleData = "\(pickerData[component][row]) Mins"
+        case 2:
+            titleData = "\(pickerData[component][row]) Secs"
+        default:
+            titleData = String(pickerData[component][row])
+        }
+
+        
+        //let titleData = "\(pickerData[component][row])"
+        //let myTitle = NSAttributedString(string: titleData, attributes: [NSAttributedString.Key.font:UIFont(name: "Avenir-Heavy", size: 18.0)!,NSAttributedString.Key.foregroundColor:UIColor.black])
+        pickerLabel.text = titleData
+        pickerLabel.font = UIFont(name: "Avenir", size: 19.0)
+        pickerLabel.textAlignment = .center
+            
+            return pickerLabel
+
+    }
     // The data to return fopr the row and component (column) that's being passed in
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+   /* func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch component {
         case 0:
             return "\(pickerData[component][row]) Hour"
@@ -64,7 +90,7 @@ class NewCountdownVC: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
            return String(pickerData[component][row])
         }
     //return String(pickerData[component][row])
-    }
+    }*/
 
 
     @IBAction func savebutton(_ sender: Any) {

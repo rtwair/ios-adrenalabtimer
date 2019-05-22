@@ -17,7 +17,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="e9c-0v-lkg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.91764705879999997" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <color key="sectionIndexColor" cocoaTouchSystemColor="darkTextColor"/>
                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -30,16 +30,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhG-em-jPx">
-                                            <rect key="frame" x="21" y="4" width="374" height="20.5"/>
+                                            <rect key="frame" x="25" y="4" width="374" height="20.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TN-A0-98B">
-                                            <rect key="frame" x="21" y="24" width="382" height="12"/>
+                                            <rect key="frame" x="25" y="25" width="382" height="12"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="12"/>
+                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="13"/>
                                             <color key="textColor" red="0.1215686275" green="0.12941176469999999" blue="0.14117647059999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -58,13 +58,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Adrenalab Timer" largeTitleDisplayMode="always" id="NOn-o8-DlE">
-                        <barButtonItem key="backBarButtonItem" title="Back" id="Q0O-CT-d7N"/>
+                        <barButtonItem key="backBarButtonItem" title="Back" id="Q0O-CT-d7N">
+                            <color key="tintColor" red="0.41568627450000001" green="0.55294117649999996" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </barButtonItem>
                         <barButtonItem key="leftBarButtonItem" systemItem="edit" id="Wdv-Gh-LPE">
+                            <color key="tintColor" red="0.41568627450980389" green="0.55294117647058827" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="editButton:" destination="w7q-Ga-AcP" id="1g7-rf-udL"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="nV0-VG-BGI">
+                            <color key="tintColor" red="0.41568627450980389" green="0.55294117647058827" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="AddButton:" destination="w7q-Ga-AcP" id="wqD-ic-0Ja"/>
                                 <segue destination="hsw-Z6-6kR" kind="show" id="eHq-dw-18w"/>
@@ -84,7 +88,7 @@
             <objects>
                 <viewController title="Add Countdown" id="Vsp-vc-hto" customClass="NewCountdownVC" customModule="Adrenalab_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3sd-ha-ghE">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name Your Timer" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3CR-uD-DCb">
@@ -98,18 +102,18 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T5d-N7-TOs">
-                                <rect key="frame" x="20" y="306" width="374" height="34"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <rect key="frame" x="20" y="306" width="374" height="36"/>
+                                <color key="backgroundColor" red="0.027450980392156862" green="0.24313725490196078" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <state key="normal" title="Save">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.91764705879999997" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="savebutton:" destination="Vsp-vc-hto" eventType="touchUpInside" id="tMa-7G-Nhy"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.69042092561721802" green="0.82069355249404907" blue="0.95962697267532349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.91764705882352937" green="0.90980392156862744" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="k0T-1W-Dyk" firstAttribute="leading" secondItem="iM5-Eg-uey" secondAttribute="leading" id="5Fb-3Z-tUe"/>
                             <constraint firstItem="iM5-Eg-uey" firstAttribute="trailing" secondItem="T5d-N7-TOs" secondAttribute="trailing" constant="20" id="8xu-im-Mxj"/>
@@ -161,17 +165,18 @@
                                 </constraints>
                             </pickerView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZh-hu-SIo">
-                                <rect key="frame" x="20" y="405" width="374" height="34"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="20" y="402" width="374" height="36"/>
+                                <color key="backgroundColor" red="0.027450980392156862" green="0.24313725490196078" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <state key="normal" title="Save">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.91764705879999997" green="0.90980392160000001" blue="0.92941176469999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="savebutton:" destination="kEF-tg-7B7" eventType="touchUpInside" id="dE3-bl-CSo"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.68860662627360447" green="0.8181800614838165" blue="0.96101845854922274" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.91764705882352937" green="0.90980392156862744" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="AZh-hu-SIo" firstAttribute="top" secondItem="qLL-hn-dRO" secondAttribute="bottom" constant="2.5" id="2lL-QU-WaB"/>
                             <constraint firstItem="5JJ-ty-eXU" firstAttribute="trailing" secondItem="Htq-x0-VEH" secondAttribute="trailing" constant="30" id="6ms-Xf-UHB"/>
@@ -182,7 +187,7 @@
                             <constraint firstItem="uLG-Dh-2AQ" firstAttribute="leading" secondItem="5JJ-ty-eXU" secondAttribute="leading" constant="20" id="cfR-JL-D7x"/>
                             <constraint firstItem="AZh-hu-SIo" firstAttribute="leading" secondItem="5JJ-ty-eXU" secondAttribute="leading" constant="20" id="iH4-F3-t6F"/>
                             <constraint firstItem="qLL-hn-dRO" firstAttribute="leading" secondItem="5JJ-ty-eXU" secondAttribute="leading" id="lpT-0b-R8F"/>
-                            <constraint firstItem="qLL-hn-dRO" firstAttribute="top" secondItem="Htq-x0-VEH" secondAttribute="bottom" constant="23" id="om7-rS-PoP"/>
+                            <constraint firstItem="qLL-hn-dRO" firstAttribute="top" secondItem="Htq-x0-VEH" secondAttribute="bottom" constant="20" id="om7-rS-PoP"/>
                             <constraint firstItem="AZh-hu-SIo" firstAttribute="centerX" secondItem="AtF-Bb-JPm" secondAttribute="centerX" id="qtZ-eq-63N"/>
                             <constraint firstItem="uLG-Dh-2AQ" firstAttribute="top" secondItem="5JJ-ty-eXU" secondAttribute="top" constant="20" id="tvJ-wY-3AR"/>
                             <constraint firstItem="AZh-hu-SIo" firstAttribute="top" secondItem="qLL-hn-dRO" secondAttribute="bottom" constant="8" id="vmg-jH-tky"/>
@@ -208,7 +213,7 @@
             <objects>
                 <viewController title="Add Stopwatch" id="wqg-Sl-SFN" customClass="NewStopwatchVC" customModule="Adrenalab_Timer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M6g-yN-egb">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name Your Timer" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6cH-bm-d0M">
@@ -218,18 +223,19 @@
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZUh-PE-Pt7">
-                                <rect key="frame" x="20" y="70" width="374" height="34"/>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="20" y="70" width="374" height="36"/>
+                                <color key="backgroundColor" red="0.027450980392156862" green="0.24313725490196078" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <state key="normal" title="Save">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.91764705882352937" green="0.90980392156862744" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="AddTapped:" destination="wqg-Sl-SFN" eventType="touchUpInside" id="GCQ-aD-Gi2"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.69042092561721802" green="0.82069355249404907" blue="0.95962697267532349" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.91764705882352937" green="0.90980392156862744" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="YbO-Cd-4t1" firstAttribute="trailing" secondItem="6cH-bm-d0M" secondAttribute="trailing" constant="20" id="36Q-w8-MXl"/>
                             <constraint firstItem="6cH-bm-d0M" firstAttribute="top" secondItem="YbO-Cd-4t1" secondAttribute="top" constant="20" id="7T8-oi-yJh"/>
@@ -256,10 +262,13 @@
         <scene sceneID="K1y-lA-Heg">
             <objects>
                 <tabBarController title="Add" id="hsw-Z6-6kR" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Cf7-lb-S8d">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="Cf7-lb-S8d">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" red="0.41568627450000001" green="0.55294117649999996" blue="0.63921568630000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="wqg-Sl-SFN" kind="relationship" relationship="viewControllers" id="2ej-C0-PiU"/>
@@ -280,8 +289,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAb-mZ-jgi">
-                                <rect key="frame" x="20.5" y="340.5" width="373.5" height="215"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="180"/>
+                                <rect key="frame" x="41.5" y="332" width="331" height="232.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="170"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -300,9 +309,9 @@
                                     <action selector="PlayPauseButton:" destination="s94-d7-AeA" eventType="touchUpInside" id="TuQ-VN-Z29"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Round" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oJ-91-45k">
-                                <rect key="frame" x="10" y="279" width="394" height="45"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Round" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6oJ-91-45k">
+                                <rect key="frame" x="10" y="283" width="394" height="41"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>

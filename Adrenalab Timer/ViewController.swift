@@ -63,11 +63,12 @@ class ViewController: UITableViewController {
         } else if (indexPath.section == COUNTDOWN) {
             info = "\(valueAsStr)"
         } else if (indexPath.section == INTERVAL) {
-            info = "\(timers[indexPath.section][indexPath.row].numintervals) rounds of\(valueAsStr)"
+            info = "\(timers[indexPath.section][indexPath.row].numintervals) rounds of \(valueAsStr)"
         }
 
         cell.infoLabel?.text = "\(info)"
         cell.titleLabel?.text = "\(name) \n\(info)"
+        
         cell.backgroundColor = .clear
         cell.titleLabel?.textColor = .black
         
@@ -111,18 +112,20 @@ class ViewController: UITableViewController {
         let label = UILabel()
         label.text = titleOfSection
         label.frame = CGRect(x: 45, y: 5, width: 200, height: 35)
-        label.font =  UIFont.boldSystemFont(ofSize: 19)
+        guard let myfont = UIFont.init(name: "Avenir-Heavy", size: 20) else {
+            return nil
+        }
+        
+        label.font = myfont
+        
         view.addSubview(label)
 
-        view.backgroundColor = UIColor.gray
+        view.backgroundColor = UIColor.init(displayP3Red: 0.42, green: 0.55, blue: 0.62, alpha: 1)
         let image = UIImageView(image: sectionImages[section])
-        image.frame = CGRect(x: 5, y: 5, width: 35, height: 35)
+        image.frame = CGRect(x: 5, y: 7, width: 30, height: 30)
         view.addSubview(image)
         
-        
-        
         return view
-        //let image = UIImage(St: sectionImages[titleOfSection])
 
     }
     

@@ -72,7 +72,7 @@ class StopwatchVC: UIViewController {
             totalRounds = Int(numrounds)
             RoundNumber.isHidden = false
             TimerLabel.text = Timermodel.secondsToTimer(totalseconds: currTimerValue)
-            RoundNumber.text = "Round \(currRound) / \(numrounds)"
+            RoundNumber.text = "ROUND \(currRound) / \(numrounds)"
         }
     }
     
